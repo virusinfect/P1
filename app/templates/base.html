@@ -35,7 +35,7 @@
                         </a>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="#">History</a></li>
-                          <li><a class="dropdown-item" href="#">Founding Members</a></li>
+                          <li><a class="dropdown-item" href="{% url 'founders' %}">Founding Members</a></li>
                           <li><a class="dropdown-item" href="{% url 'timeline' %}">Timeline</a></li>
                         </ul>
                     </li>
@@ -46,6 +46,7 @@
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="#">Sports Overview</a></li>
                           <li><a class="dropdown-item" href="#">Sports Teams</a></li>
+                          <li><a class="dropdown-item" href="#">Veterans</a></li>
                           <li><a class="dropdown-item" href="#">Achievements</a></li>
                         </ul>
                     </li>
@@ -100,6 +101,7 @@
     <div class="container mt-4">
         {% block content %}{% endblock %}
     </div>
+    
 
     <!-- Link to Bootstrap JS (Popper.js and Bootstrap scripts are required for some features) -->
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
