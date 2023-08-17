@@ -12,3 +12,5 @@ def index(request):
     return render(request, 'index.html')
 def sports(request):
     return render(request, 'sports.html')
+def video(request):
+    return render(request, 'video.html')

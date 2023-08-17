@@ -3,6 +3,18 @@
 {% block title %}Timeline{% endblock %}
 
 {% block content %}
+{% load static %}
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold text-body-emphasis">સમયરેખા</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">
+            Embark on a visual journey through time with our captivating timeline. Spanning pivotal moments and
+            milestones, this timeline weaves together the past, present, and future. Each photo serves as a snapshot
+            into history, capturing the essence of the moments that shaped us. From humble beginnings to remarkable
+            achievements, our timeline unveils the story of our evolution. Join us in reliving cherished memories and
+            celebrating the progress that propels us forward</p>
+    </div>
+</div>
 <section style="background-color: #ffffff;">
     <div class="container py-5">
         <div class="main-timeline-2 ">
@@ -12,32 +24,27 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <a href="#" data-bs-slide="next">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(130).webp"
-                                        class="d-block w-100" alt="Slide 1">
+                                    <img src="{% static 'media\jaffery\12.JPG' %}" class="d-block w-100" alt="Slide 1">
                                 </a>
                             </div>
                             <div class="carousel-item">
                                 <a href="#" data-bs-slide="next">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(131).webp"
-                                        class="d-block w-100" alt="Slide 2">
+                                    <img src="{% static 'media\jaffery\3.JPG' %}" class="d-block w-100" alt="Slide 2">
                                 </a>
                             </div>
                             <div class="carousel-item">
                                 <a href="#" data-bs-slide="next">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(134).webp"
-                                        class="d-block w-100" alt="Slide 3">
+                                    <img src="{% static 'media\jaffery\9.JPG' %}" class="d-block w-100" alt="Slide 3">
                                 </a>
                             </div>
                             <div class="carousel-item">
                                 <a href="#" data-bs-slide="next">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(132).webp"
-                                        class="d-block w-100" alt="Slide 4">
+                                    <img src="{% static 'media\jaffery\10.JPG' %}" class="d-block w-100" alt="Slide 4">
                                 </a>
                             </div>
                             <div class="carousel-item">
                                 <a href="#" data-bs-slide="next">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(125).webp"
-                                        class="d-block w-100" alt="Slide 5">
+                                    <img src="{% static 'media\jaffery\11.JPG' %}" class="d-block w-100" alt="Slide 5">
                                 </a>
                             </div>
                         </div>
@@ -53,65 +60,50 @@
                         </button>
                     </div>
                     <div class="card-body p-4">
-                        <h4 class="fw-bold mb-1">Serene Park Amidst the City</h4>
-                        <p class="text-muted mb-4"><i class="far fa-clock" aria-hidden="true"></i> 2017</p>
-                        <p class="mb-0">Amidst the bustling city, a tranquil park serves as an oasis of calm. Shaded by
-                            tall trees, its paths wind gently, inviting visitors to meander. Birds sing melodies, as
-                            benches offer rest to weary wanderers.</p>
+                        <h4 class="fw-bold mb-1">Jaffery Sports Club Sports Day</h4>
+                        <p class="text-muted mb-4"><i class="far fa-clock" aria-hidden="true"></i> 1992</p>
+                        <button type="button" class="btn btn-outline-success">view more ..</button>
                     </div>
                 </div>
 
             </div>
             <div class="timeline-2 right-2">
                 <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(129).webp" class="card-img-top"
-                        alt="Responsive image">
+                    <img src="{% static 'media\timeline\120.JPEG' %}" class="card-img-top" alt="Responsive image">
                     <div class="card-body p-4">
-                        <h4 class="fw-bold mb-1">શહેરની વચ્ચે શાંત પાર્ક</h4>
-                        <p class="text-muted mb-4"><i class="far fa-clock" aria-hidden="true"></i> 2016</p>
-                        <p class="mb-0">ખળભળાટ મચાવતા શહેરની વચ્ચે, એક શાંત પાર્ક શાંતના ઓએસિસ તરીકે સેવા આપે છે. ઊંચા
-                            વૃક્ષોથી છાંયડો, તેના રસ્તાઓ હળવાશથી પવન કરે છે, જે મુલાકાતીઓને હરવા-ફરવા માટે આમંત્રિત કરે
-                            છે. પક્ષીઓ ધૂન ગાય છે, કારણ કે બેન્ચ થાકેલા ભટકનારાઓને આરામ આપે છે.</p>
+                        <h4 class="fw-bold mb-4"> Youth Program 2009</h4>
+                        <p class="text-muted mb-4"><i class="far fa-clock" aria-hidden="true"></i> 2009</p>
+                        <button type="button" class="btn btn-outline-success">view more ..</button>
                     </div>
                 </div>
             </div>
             <div class="timeline-2 left-2">
                 <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(131).webp" class="card-img-top"
-                        alt="Responsive image">
+                    <img src="{% static 'media\timeline\p.JPG' %}" class="card-img-top" alt="Responsive image">
                     <div class="card-body p-4">
                         <h4 class="fw-bold mb-4">શહેરની વચ્ચે શાંત પાર્ક</h4>
-                        <p class="text-muted mb-4"><i class="far fa-clock" aria-hidden="true"></i> 2015</p>
-                        <p class="mb-0">ખળભળાટ મચાવતા શહેરની વચ્ચે, એક શાંત પાર્ક શાંતના ઓએસિસ તરીકે સેવા આપે છે. ઊંચા
-                            વૃક્ષોથી છાંયડો, તેના રસ્તાઓ હળવાશથી પવન કરે છે, જે મુલાકાતીઓને હરવા-ફરવા માટે આમંત્રિત કરે
-                            છે. પક્ષીઓ ધૂન ગાય છે, કારણ કે બેન્ચ થાકેલા ભટકનારાઓને આરામ આપે છે.</p>
+                        <p class="text-muted mb-4"><i class="far fa-clock" aria-hidden="true"></i> 2000</p>
+                        <button type="button" class="btn btn-outline-success">view more ..</button>
                     </div>
                 </div>
             </div>
             <div class="timeline-2 right-2">
                 <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(125).webp" class="card-img-top"
-                        alt="Responsive image">
+                    <img src="{% static 'media\timeline\8.JPG' %}" class="card-img-top" alt="Responsive image">
                     <div class="card-body p-4">
-                        <h4 class="fw-bold mb-4"> Serene Park Amidst the City</h4>
-                        <p class="text-muted mb-4"><i class="far fa-clock" aria-hidden="true"></i> 2014</p>
-                        <p class="mb-0">Amidst the bustling city, a tranquil park serves as an oasis of calm. Shaded by
-                            tall trees, its paths wind gently, inviting visitors to meander. Birds sing melodies, as
-                            benches offer rest to weary wanderers.
-                        </p>
+                        <h4 class="fw-bold mb-4"> Cricket Bonaza 2009</h4>
+                        <p class="text-muted mb-4"><i class="far fa-clock" aria-hidden="true"></i> 2009</p>
+                        <button type="button" class="btn btn-outline-success">view more ..</button>
                     </div>
                 </div>
             </div>
             <div class="timeline-2 left-2">
                 <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(144).webp" class="card-img-top"
-                        alt="Responsive image">
+                    <img src="{% static 'media\timeline\1.JPG' %}" class="card-img-top" alt="Responsive image">
                     <div class="card-body p-4">
-                        <h4 class="fw-bold mb-4">શહેરની વચ્ચે શાંત પાર્ક</h4>
-                        <p class="text-muted mb-4"><i class="far fa-clock" aria-hidden="true"></i> 2013</p>
-                        <p class="mb-0">ખળભળાટ મચાવતા શહેરની વચ્ચે, એક શાંત પાર્ક શાંતના ઓએસિસ તરીકે સેવા આપે છે. ઊંચા
-                            વૃક્ષોથી છાંયડો, તેના રસ્તાઓ હળવાશથી પવન કરે છે, જે મુલાકાતીઓને હરવા-ફરવા માટે આમંત્રિત કરે
-                            છે. પક્ષીઓ ધૂન ગાય છે, કારણ કે બેન્ચ થાકેલા ભટકનારાઓને આરામ આપે છે.</p>
+                        <h4 class="fw-bold mb-4">જૂની ટીમનો ફોટો</h4>
+                        <p class="text-muted mb-4"><i class="far fa-clock" aria-hidden="true"></i> 1993</p>
+                        <button type="button" class="btn btn-outline-success">view more ..</button>
                     </div>
                 </div>
             </div>

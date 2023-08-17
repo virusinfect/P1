@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}About Us - My Django App{% endblock %}
+{% block title %}Sports{% endblock %}
 
 {% block content %}
 {% load static %}
@@ -77,6 +77,11 @@
         class="w-100 shadow-1-strong rounded mb-4"
         alt="Boat on Calm Water"
       />
+      <img
+        src="{% static 'media\jaffery\4.JPG' %}"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Boat on Calm Water"
+      />
     </div>
   
     <div class="col-lg-4 mb-4 mb-lg-0">
@@ -92,10 +97,6 @@
         alt="Yosemite National Park"
       />
     </div>
-  </div>
-  <!-- Gallery -->
-  <!-- Gallery -->
-<div class="row">
     <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
       <img
         src="{% static 'media\jaffery\7.JPG' %}"
@@ -103,11 +104,7 @@
         alt="Boat on Calm Water"
       />
   
-      <img
-        src="{% static 'media\jaffery\8.JPG' %}"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="Wintry Mountain Landscape"
-      />
+
     </div>
   
     <div class="col-lg-4 mb-4 mb-lg-0">
@@ -139,5 +136,6 @@
     </div>
   </div>
   <!-- Gallery -->
+  
 
 {% endblock %}

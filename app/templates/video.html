@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - My Django App{% endblock %}
+
+{% block content %}
+{% load static %}
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Interviews</h1>
+            <p class="lead text-body-secondary">Step into a world of insights and inspiration with our captivating video
+                interviews. Immerse yourself in candid conversations with thought leaders, pioneers, and visionaries
+                from various fields. Delve into their journeys, gaining unique perspectives on challenges, triumphs, and
+                lessons learned. These interviews offer an intimate glimpse into the minds that drive innovation and
+                change. Uncover stories that resonate, ideas that ignite, and wisdom that empowers..</p>
+
+        </div>
+    </div>
+</section>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="embed-responsive embed-responsive-16by9">
+                <video controls class="embed-responsive-item">
+                    <source src="{% static 'media\videos\1.M4V' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
