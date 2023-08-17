@@ -24,6 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('timeline/', views.timeline, name='timeline'),
     path('founders/', views.founders, name='founders'),
+    path('sports/', views.sports, name='sports'),
+    path('', views.index, name='index'),
     path('test/', views.test, name='test'),
 ]
 if settings.DEBUG:

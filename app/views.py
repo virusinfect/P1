@@ -8,3 +8,7 @@ def members(request):
     return render(request, 'members.html')
 def founders(request):
     return render(request, 'founders.html')
+def index(request):
+    return render(request, 'index.html')
+def sports(request):
+    return render(request, 'sports.html')
