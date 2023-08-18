@@ -16,18 +16,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app import views
+from app import views, admin_views 
 from django.conf import settings
 from django.conf.urls.static import static
+from app.views import SetLanguageView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('timeline/', views.timeline, name='timeline'),
     path('founders/', views.founders, name='founders'),
+    path('login/', views.login, name='login'),
     path('sports/', views.sports, name='sports'),
     path('video/', views.video, name='video'),
     path('', views.index, name='index'),
     path('test/', views.test, name='test'),
+    path('set_language/<str:lang_code>/', SetLanguageView.as_view(), name='set_language'),
+    path('backend/', admin_views.backend, name='backend'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

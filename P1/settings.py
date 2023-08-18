@@ -104,32 +104,28 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
-USE_I18N = True
 
+LANGUAGE_CODE = 'en-us'
 # Specify the languages you want to support
 LANGUAGES = [
-    ('en', 'English'),
-    ('gu', 'Gujarati'),
+    ('en', ('English')),
+    ('gu', ('Gujarati')),
+    ('fr', ('French')),
     # Add more languages here
 ]
-
-# Set the default language
-LANGUAGE_CODE = 'en'
 
 # Set the path where translation files will be stored
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
+USE_I18N = True
+USE_L10N = True
+USE_TZ = True
 
-LANGUAGE_CODE = 'en'
+
 
 TIME_ZONE = 'UTC'
 
-LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'locale'),
-]
-
-USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
