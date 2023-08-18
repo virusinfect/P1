@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-18 12:23+0300\n"
+"POT-Creation-Date: 2023-08-18 15:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,32 +17,125 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: .\app\templates\backend\base.html:7
+msgid "Admin"
+msgstr ""
+
+#: .\app\templates\backend\base.html:39
+msgid "Add Founding Members"
+msgstr ""
+
+#: .\app\templates\backend\base.html:96 .\app\templates\base.html:93
+#: .\app\templates\login.html:25
+msgid "Lang"
+msgstr "લેંગ"
+
+#: .\app\templates\base.html:31
+msgid "Home"
+msgstr "ઘર"
+
+#: .\app\templates\base.html:35
+msgid "About Us"
+msgstr "અમારા વિશે"
+
+#: .\app\templates\base.html:38
+msgid "History"
+msgstr "ઇતિહાસ"
+
+#: .\app\templates\base.html:39
+msgid "Founding Members"
+msgstr "સ્થાપક સભ્યો"
+
+#: .\app\templates\base.html:40
+msgid "Timeline"
+msgstr "સમયરેખા"
+
+#: .\app\templates\base.html:45
+msgid "Sports"
+msgstr "રમતગમત"
+
+#: .\app\templates\base.html:48
+msgid "Sports Overview"
+msgstr "રમતગમતની ઝાંખી"
+
+#: .\app\templates\base.html:49
+msgid "Sports Teams"
+msgstr "રમતગમત ટીમો"
+
+#: .\app\templates\base.html:50
+msgid "Veterans"
+msgstr "વેટરન્સ"
+
+#: .\app\templates\base.html:51 .\app\templates\base.html:62
+msgid "Achievements"
+msgstr "સિદ્ધિઓ"
+
+#: .\app\templates\base.html:57
+msgid "Events"
+msgstr "ઘટનાઓ"
+
+#: .\app\templates\base.html:60
+msgid "Upcoming Events"
+msgstr "આગામી ઘટનાઓ"
+
+#: .\app\templates\base.html:61
+msgid "Past Events"
+msgstr "ભૂતકાળની ઘટનાઓ"
+
+#: .\app\templates\base.html:66
+msgid "Projects"
+msgstr "પ્રોજેક્ટ્સ"
+
+#: .\app\templates\base.html:70
+msgid "Celebration"
+msgstr "ઉજવણી"
+
+#: .\app\templates\base.html:73
+msgid "75 years Celebration"
+msgstr "75 વર્ષની ઉજવણી"
+
+#: .\app\templates\base.html:74
+msgid "100 years Celebration"
+msgstr "100 વર્ષની ઉજવણી"
+
+#: .\app\templates\base.html:79
+msgid "Content"
+msgstr "સામગ્રી"
+
+#: .\app\templates\base.html:82
+msgid "Video Interviews"
+msgstr "વિડિઓ ઇન્ટરવ્યુ"
+
+#: .\app\templates\base.html:83
+msgid "Books by Members"
+msgstr "સભ્યો દ્વારા પુસ્તકો"
+
+#: .\app\templates\founder_bio.html:18
+msgid "Close"
+msgstr "બંધ"
+
 #: .\app\templates\login.html:7 .\app\templates\translationdata.txt:29
 #: .\app\templates\translationdata.txt:36
 msgid "Login"
 msgstr "પ્રવેશ કરો"
 
-#: .\app\templates\login.html:24
-msgid "Lang"
-msgstr "લેંગ"
-
-#: .\app\templates\login.html:38
+#: .\app\templates\login.html:40
 msgid "Please Sign in:"
 msgstr "કૃપા કરીને સાઇન ઇન કરો:"
 
-#: .\app\templates\login.html:42 .\app\templates\translationdata.txt:32
+#: .\app\templates\login.html:45 .\app\templates\translationdata.txt:32
 msgid "Username:"
 msgstr "વપરાશકર્તા નામ:"
 
-#: .\app\templates\login.html:46 .\app\templates\translationdata.txt:34
+#: .\app\templates\login.html:50 .\app\templates\translationdata.txt:34
 msgid "Password:"
 msgstr "પાસવર્ડ:"
 
-#: .\app\templates\login.html:52
+#: .\app\templates\login.html:56
 msgid "Remember-me:"
 msgstr "મને યાદ:"
 
-#: .\app\templates\login.html:55
+#: .\app\templates\login.html:59
 msgid "Sign in:"
 msgstr "સાઇન ઇન કરો:"
 

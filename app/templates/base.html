@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+{% load i18n %}
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -28,74 +28,78 @@
                 
                 <ul class="navbar-nav col-lg-6 justify-content-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">{% trans 'Home'%}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            About Us
+                            {% trans 'About Us' %}
                         </a>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">History</a></li>
-                          <li><a class="dropdown-item" href="{% url 'founders' %}">Founding Members</a></li>
-                          <li><a class="dropdown-item" href="{% url 'timeline' %}">Timeline</a></li>
+                          <li><a class="dropdown-item" href="#">{% trans 'History'%}</a></li>
+                          <li><a class="dropdown-item" href="{% url 'founders' %}">{% trans 'Founding Members'%}</a></li>
+                          <li><a class="dropdown-item" href="{% url 'timeline' %}">{% trans 'Timeline'%}</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Sports
+                            {% trans 'Sports'%}
                         </a>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="{% url 'sports' %}">Sports Overview</a></li>
-                          <li><a class="dropdown-item" href="#">Sports Teams</a></li>
-                          <li><a class="dropdown-item" href="#">Veterans</a></li>
-                          <li><a class="dropdown-item" href="#">Achievements</a></li>
+                          <li><a class="dropdown-item" href="{% url 'sports' %}">{% trans 'Sports Overview'%}</a></li>
+                          <li><a class="dropdown-item" href="#">{% trans 'Sports Teams'%}</a></li>
+                          <li><a class="dropdown-item" href="#">{% trans 'Veterans'%}</a></li>
+                          <li><a class="dropdown-item" href="#">{% trans 'Achievements'%}</a></li>
                           
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Events
+                            {% trans 'Events'%}
                         </a>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Upcoming Events</a></li>
-                          <li><a class="dropdown-item" href="#">Past Events</a></li>
-                          <li><a class="dropdown-item" href="#">Achievements</a></li>
+                          <li><a class="dropdown-item" href="#">{% trans 'Upcoming Events'%}</a></li>
+                          <li><a class="dropdown-item" href="#">{% trans 'Past Events'%}</a></li>
+                          <li><a class="dropdown-item" href="#">{% trans 'Achievements'%}</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Projects</a>
+                        <a class="nav-link active" aria-current="page" href="#">{% trans 'Projects'%}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Celebration
+                            {% trans 'Celebration'%}
                         </a>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">75 years Celebration</a></li>
-                          <li><a class="dropdown-item" href="#">100 years Celebration</a></li>
+                          <li><a class="dropdown-item" href="#">{% trans '75 years Celebration'%}</a></li>
+                          <li><a class="dropdown-item" href="#">{% trans '100 years Celebration'%}</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Content
+                            {% trans 'Content'%}
                         </a>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="{% url 'video' %}">Video Interviews</a></li>
-                          <li><a class="dropdown-item" href="#">Books by Members</a></li>
+                          <li><a class="dropdown-item" href="{% url 'video' %}">{% trans 'Video Interviews'%}</a></li>
+                          <li><a class="dropdown-item" href="#">{% trans 'Books by Members'%}</a></li>
                         </ul>
                     </li>
 
                 </ul>
+                
                 <div class="d-lg-flex col-lg-3 justify-content-lg-end">
                     <div class="dropdown">
-                        <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Lang
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu btn-outline-success">
-                          <li><a class="dropdown-item active" href="#">en</a></li>
-                          <li><a class="dropdown-item" href="#">gu</a></li>
-                        </ul>
-                      </div>
-                </div>
+                      <button class="btn btn-outline-success dropdown-toggle" type="button" id="languageDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ lang_name }}{% trans 'Lang' %}
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                        {% get_available_languages as languages %}
+                        {% for lang_code, lang_name in languages %}
+                        <li><a class="dropdown-item" href="{% url 'set_language' lang_code %}">{{ lang_name }}</a></li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
             </div>
         </div>
     </nav>

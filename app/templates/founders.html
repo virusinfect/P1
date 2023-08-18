@@ -26,77 +26,16 @@
         <div class="container">
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-                <div class="col">
-                    <div class="card shadow-lg  bg-body-tertiary rounded">
-                        <img src="{% static 'media\patrons\4.JPG' %}">
+                {% for founder in founders %}
+                    <div class="col">
+                        <div class="card shadow-lg bg-body-tertiary rounded">
+                            <a href="{% url 'founderbio' founder.id %}">
+                                <img src="{{ founder.image.url }}" alt="{{ founder.name }}" class="card-img-top" width="300"
+                                height="400">
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-lg  bg-body-tertiary rounded">
-                        <img src="{% static 'media\patrons\15.JPG' %}">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-lg  bg-body-tertiary rounded">
-                        <img src="{% static 'media\patrons\16.JPG' %}">
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-lg  bg-body-tertiary rounded">
-                        <img src="{% static 'media\patrons\14.JPG' %}">
-
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-lg  bg-body-tertiary rounded">
-                        <img src="{% static 'media\patrons\8.JPG' %}">
-
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-lg  bg-body-tertiary rounded">
-                        <img src="{% static 'media\patrons\9.JPG' %}">
-
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-lg  bg-body-tertiary rounded">
-                        <img src="{% static 'media\patrons\10.JPG' %}">
-
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-lg  bg-body-tertiary rounded">
-                        <img src="{% static 'media\patrons\11.JPG' %}">
-
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-lg  bg-body-tertiary rounded">
-                        <img src="{% static 'media\patrons\13.JPG' %}">
-
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-lg  bg-body-tertiary rounded">
-                        <img src="{% static 'media\patrons\14.JPG' %}">
-
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-lg  bg-body-tertiary rounded">
-                        <img src="{% static 'media\patrons\15.JPG' %}">
-
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-lg  bg-body-tertiary rounded">
-                        <img src="{% static 'media\patrons\16.JPG' %}">
-
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

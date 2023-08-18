@@ -2,112 +2,119 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>({% trans "Admin" %})</title>
-    {% load static %}
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% trans "Admin" %}</title>
+  {% load static %}
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
 </head>
 
 <body>
-    <!-- Static Navigation Bar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded bg-success" aria-label="Thirteenth navbar example">
-        <div class="container-fluid">
-            <a class="navbar-brand col-lg-3 me-0" href="#">Jaffery Sports Club</a>
+  <!-- Static Navigation Bar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary rounded bg-success" aria-label="Thirteenth navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand col-lg-3 me-0" href="#">Jaffery Sports Club</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11"
-                aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11"
+        aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+
+        <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              About Us
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'add_founders' %}">{% trans "Add Founding Members"%}</a></li>
+              <li><a class="dropdown-item" href="{% url 'timeline' %}">Timeline</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Sports
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'sports' %}">Sports Overview</a></li>
+              <li><a class="dropdown-item" href="#">Sports Teams</a></li>
+              <li><a class="dropdown-item" href="#">Veterans</a></li>
+              <li><a class="dropdown-item" href="#">Achievements</a></li>
+
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Events
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Upcoming Events</a></li>
+              <li><a class="dropdown-item" href="#">Past Events</a></li>
+              <li><a class="dropdown-item" href="#">Achievements</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Projects</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Celebration
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">75 years Celebration</a></li>
+              <li><a class="dropdown-item" href="#">100 years Celebration</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Content
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'video' %}">Video Interviews</a></li>
+              <li><a class="dropdown-item" href="#">Books by Members</a></li>
+            </ul>
+          </li>
+
+        </ul>
+        <div class="d-lg-flex col-lg-3 justify-content-lg-end">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              {{ lang_name }}{% trans 'Lang' %}
             </button>
-
-            <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-                
-                <ul class="navbar-nav col-lg-6 justify-content-lg-center">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            About Us
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">History</a></li>
-                          <li><a class="dropdown-item" href="{% url 'founders' %}">Founding Members</a></li>
-                          <li><a class="dropdown-item" href="{% url 'timeline' %}">Timeline</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Sports
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="{% url 'sports' %}">Sports Overview</a></li>
-                          <li><a class="dropdown-item" href="#">Sports Teams</a></li>
-                          <li><a class="dropdown-item" href="#">Veterans</a></li>
-                          <li><a class="dropdown-item" href="#">Achievements</a></li>
-                          
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Events
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Upcoming Events</a></li>
-                          <li><a class="dropdown-item" href="#">Past Events</a></li>
-                          <li><a class="dropdown-item" href="#">Achievements</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Projects</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Celebration
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">75 years Celebration</a></li>
-                          <li><a class="dropdown-item" href="#">100 years Celebration</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Content
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="{% url 'video' %}">Video Interviews</a></li>
-                          <li><a class="dropdown-item" href="#">Books by Members</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-                <div class="d-lg-flex col-lg-3 justify-content-lg-end">
-                    <div class="dropdown">
-                        <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Lang
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu btn-outline-success">
-                          <li><a class="dropdown-item active" href="#">en</a></li>
-                          <li><a class="dropdown-item" href="#">gu</a></li>
-                        </ul>
-                      </div>
-                </div>
-            </div>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+              {% get_available_languages as languages %}
+              {% for lang_code, lang_name in languages %}
+              <li><a class="dropdown-item" href="{% url 'set_language' lang_code %}">{{ lang_name }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
-    </nav>
-
-    <div class="container mt-4">
-        {% block content %}{% endblock %}
+      </div>
     </div>
-    
+  </nav>
 
-    <!-- Link to Bootstrap JS (Popper.js and Bootstrap scripts are required for some features) -->
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.3/dist/js/bootstrap.bundle.min.js"></script>
+  <div class="container mt-4">
+    {% block content %}{% endblock %}
+  </div>
+
+
+  <!-- Link to Bootstrap JS (Popper.js and Bootstrap scripts are required for some features) -->
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

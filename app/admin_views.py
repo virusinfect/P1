@@ -8,3 +8,6 @@ from django.utils.translation import activate
 
 def backend(request):
     return render(request, 'backend\index.html')
+
+def add_founders(request):
+    return render(request, 'backend\add_founders.html')
