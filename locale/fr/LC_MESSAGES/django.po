@@ -29,91 +29,91 @@ msgstr ""
 #: .\app\templates\backend\base.html:96 .\app\templates\base.html:93
 #: .\app\templates\login.html:25
 msgid "Lang"
-msgstr ""
+msgstr "Langue"
 
 #: .\app\templates\base.html:31
 msgid "Home"
-msgstr ""
+msgstr "Maison"
 
 #: .\app\templates\base.html:35
 msgid "About Us"
-msgstr ""
+msgstr "À propos de nous"
 
 #: .\app\templates\base.html:38
 msgid "History"
-msgstr ""
+msgstr "Histoire"
 
 #: .\app\templates\base.html:39
 msgid "Founding Members"
-msgstr ""
+msgstr "Membres fondateurs"
 
 #: .\app\templates\base.html:40
 msgid "Timeline"
-msgstr ""
+msgstr "Chronologie"
 
 #: .\app\templates\base.html:45
 msgid "Sports"
-msgstr ""
+msgstr "Des sports"
 
 #: .\app\templates\base.html:48
 msgid "Sports Overview"
-msgstr ""
+msgstr "Aperçu des sports"
 
 #: .\app\templates\base.html:49
 msgid "Sports Teams"
-msgstr ""
+msgstr "Équipes sportives"
 
 #: .\app\templates\base.html:50
 msgid "Veterans"
-msgstr ""
+msgstr "anciens combattants"
 
 #: .\app\templates\base.html:51 .\app\templates\base.html:62
 msgid "Achievements"
-msgstr ""
+msgstr "Réalisations"
 
 #: .\app\templates\base.html:57
 msgid "Events"
-msgstr ""
+msgstr "Événements"
 
 #: .\app\templates\base.html:60
 msgid "Upcoming Events"
-msgstr ""
+msgstr "évènements à venir"
 
 #: .\app\templates\base.html:61
 msgid "Past Events"
-msgstr ""
+msgstr "Événements passés"
 
 #: .\app\templates\base.html:66
 msgid "Projects"
-msgstr ""
+msgstr "Projets"
 
 #: .\app\templates\base.html:70
 msgid "Celebration"
-msgstr ""
+msgstr "Fête"
 
 #: .\app\templates\base.html:73
 msgid "75 years Celebration"
-msgstr ""
+msgstr "Fête des 75 ans"
 
 #: .\app\templates\base.html:74
 msgid "100 years Celebration"
-msgstr ""
+msgstr "Fête des 100 ans"
 
 #: .\app\templates\base.html:79
 msgid "Content"
-msgstr ""
+msgstr "Contenu"
 
 #: .\app\templates\base.html:82
 msgid "Video Interviews"
-msgstr ""
+msgstr "Entrevues vidéo"
 
 #: .\app\templates\base.html:83
 msgid "Books by Members"
-msgstr ""
+msgstr "Livres par les membres"
 
 #: .\app\templates\founder_bio.html:18
 msgid "Close"
-msgstr ""
+msgstr "Fermer"
 
 #: .\app\templates\login.html:7 .\app\templates\translationdata.txt:29
 #: .\app\templates\translationdata.txt:36
@@ -142,4 +142,4 @@ msgstr ""
 
 #: .\app\templates\translationdata.txt:8
 msgid "User Login"
-msgstr ""
+msgstr "Utilisateur en ligne"
