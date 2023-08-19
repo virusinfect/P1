@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app import views, admin_views, founder_views 
+from app import views, admin_views, founder_views ,category_view
 from django.conf import settings
 from django.conf.urls.static import static
 from app.views import SetLanguageView
@@ -27,8 +27,9 @@ urlpatterns = [
     path('founders/', founder_views.founders_list, name='founders'),
     path('founderbio/<int:founder_id>/', founder_views.founderbio, name='founderbio'),
     path('login/', views.login, name='login'),
-    path('sports/', views.sports, name='sports'),
+    path('sports/<int:main_category_id>/', category_view.subcategories_list, name='sports'),
     path('video/', views.video, name='video'),
+    path('album/', views.album, name='video'),
     path('', views.index, name='index'),
     path('test/', views.test, name='test'),
     path('set_language/<str:lang_code>/', SetLanguageView.as_view(), name='set_language'),

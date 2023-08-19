@@ -19,6 +19,8 @@ def sports(request):
     return render(request, 'sports.html')
 def video(request):
     return render(request, 'video.html')
+def album(request):
+    return render(request, 'album.html')
 
 
 

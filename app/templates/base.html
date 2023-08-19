@@ -45,7 +45,7 @@
                             {% trans 'Sports'%}
                         </a>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="{% url 'sports' %}">{% trans 'Sports Overview'%}</a></li>
+                          <li><a class="dropdown-item" href="{% url 'sports' main_category_id=1 %}">{% trans 'Sports Overview'%}</a></li>
                           <li><a class="dropdown-item" href="#">{% trans 'Sports Teams'%}</a></li>
                           <li><a class="dropdown-item" href="#">{% trans 'Veterans'%}</a></li>
                           <li><a class="dropdown-item" href="#">{% trans 'Achievements'%}</a></li>
@@ -112,6 +112,7 @@
     <!-- Link to Bootstrap JS (Popper.js and Bootstrap scripts are required for some features) -->
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    
 
 </body>
 
