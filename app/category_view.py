@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import MainCategory, SubCategory, Photo
+from .models import MainCategory, SubCategory, Photo, ChildCategory
 
 def subcategories_list(request, main_category_id):
     main_category = MainCategory.objects.get(pk=main_category_id)

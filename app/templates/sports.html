@@ -1,16 +1,16 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 {% block title %}Sports{% endblock %}
 
 {% block content %}
 {% load static %}
 <div class="px-4 py-5 my-5 text-center">
-  <h1 class="display-5 fw-bold text-body-emphasis">રમતગમતની ઝાંખી</h1>
+  <h1 class="display-5 fw-bold text-body-emphasis">{% trans 'Sports Overview' %} </h1>
   <div class="col-lg-6 mx-auto">
-    <p class="lead mb-4">
-      એક વાઇબ્રન્ટ સ્પોર્ટ્સ સમુદાયને સ્વીકારો જે જીતની ઉજવણી કરે છે અને મિત્રતાને પ્રોત્સાહન આપે છે. વિવિધ ટીમો,
-      રોમાંચક મેચો અને ગતિશીલ ઘટનાઓ આપણને વ્યાખ્યાયિત કરે છે. અમારી સફરના હાર્દને કેપ્ચર કરીને અમારી ફોટો
-      ગેલેરીનું અન્વેષણ કરો. રમતગમતની ભાવના શેર કરવા અને કાયમી યાદો બનાવવા અમારી સાથે જોડાઓ.</p>
+    <p class="lead mb-4">{% blocktrans %}
+      Embrace a vibrant sports community that celebrates victory and fosters friendship. Various teams, thrilling
+      matches, and exciting events elucidate our journey. Capture our journey's essence by exploring our photo gallery.
+      Share the spirit of fun, create lasting memories, and connect with us for enduring experiences.{% endblocktrans %}</p>
   </div>
 </div>
 <div class="container px-4 py-5" id="custom-cards">
@@ -28,8 +28,10 @@
           <div class="collapse" id="collapse{{ subcategory.id }}">
             <ul class="list-group list-group-numbered">
               {% for child_category in subcategory.childcategory_set.all %}
-              <a href="#" class=" link-light link-offset-2 link-underline link-underline-opacity-0"><li>{{ child_category.name }} <span class="badge bg-primary rounded-pill">{{ child_category.photo_set.count }}</span></li></a>
-              
+              <a href="{% url 'album' child_category_id=child_category.id %}" class=" link-light link-offset-2 link-underline link-underline-opacity-0">
+                <li>{{ child_category.name }} <span class="badge bg-primary rounded-pill">{{child_category.photo_set.count }}</span></li>
+              </a>
+
 
               {% endfor %}
             </ul>
