@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.conf import settings
 from django.views import View
 from django.utils.translation import activate
+from .models import Video
 
 def timeline(request):
     return render(request, 'timeline.html')
@@ -17,8 +18,7 @@ def index(request):
     return render(request, 'index.html')
 def sports(request):
     return render(request, 'sports.html')
-def video(request):
-    return render(request, 'video.html')
+
 def album(request):
     return render(request, 'album.html')
 

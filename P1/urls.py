@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app import views, admin_views, founder_views ,category_view
+from app import views,founder_views ,category_view, video_views
 from django.conf import settings
 from django.conf.urls.static import static
 from app.views import SetLanguageView
@@ -25,17 +25,17 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('timeline/', views.timeline, name='timeline'),
     path('founders/', founder_views.founders_list, name='founders'),
+    path('chairmans/', founder_views.chairmans_list, name='chairmans'),
     path('founderbio/<int:founder_id>/', founder_views.founderbio, name='founderbio'),
+    path('chairmanbio/<int:chairman_id>/', founder_views.chairmanbio, name='chairmanbio'),
     path('login/', views.login, name='login'),
     path('sports/<int:main_category_id>/', category_view.subcategories_list, name='sports'),
-    path('video/', views.video, name='video'),
+    path('video/', video_views.video_list, name='videolist'),
     path('album/<int:child_category_id>/', category_view.child_category_images, name='album'),
     path('get-comments/', category_view.get_comments, name='comments'),
     path('', views.index, name='index'),
     path('test/', views.test, name='test'),
     path('set_language/<str:lang_code>/', SetLanguageView.as_view(), name='set_language'),
-    path('backend/', admin_views.backend, name='backend'),
-    path('add_founders/', admin_views.add_founders, name='add_founders'),
     path('get-comment-count/', category_view.get_comment_count, name='get_comment_count'),
 ]
 if settings.DEBUG:

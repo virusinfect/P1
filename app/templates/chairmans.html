@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block title %}Patrons{% endblock %}
+{% block title %}{% trans 'Past Chairmans'%}{% endblock %}
 
 {% block content %}
 {% load static %}
@@ -10,7 +10,7 @@
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">{% trans 'Our Founders'%}</h1>
+                <h1 class="fw-light">{% trans 'Past Chairmans'%}</h1>
                 <p class="lead text-body-secondary">{% blocktrans %}Welcometothepage dedicated to our founders, who are the
                     cornerstone of our organization. Their collective vision and courage have paved our way to success.
                     Their portraits capture their dedication and innovation. Emerging from the backdrop, their
@@ -23,15 +23,15 @@
         </div>
     </section>
 
-    <div class="album py-5">
+    <div class="album py-5 ">
         <div class="container">
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-                {% for founder in founders %}
+                {% for chairman in chairmans %}
                 <div class="col">
                     <div class="card shadow-lg bg-body-tertiary rounded">
-                        <a href="{% url 'founderbio' founder.id %}">
-                            <img src="{{ founder.image.url }}" alt="{{ founder.name }}" class="card-img-top" width="300"
+                        <a href="{% url 'chairmanbio' chairman.id %}">
+                            <img src="{{ chairman.image.url }}" alt="{{ chairman.name }}" class="card-img-top" width="300"
                                 height="400">
                         </a>
                     </div>
