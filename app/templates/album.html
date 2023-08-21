@@ -15,21 +15,105 @@
     </div>
 </section>
 
+
+<style>
+    /* Add your CSS styles here */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+
+    .modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        max-height: 80%;
+        overflow-y: auto;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .modal-sheet .modal-dialog {
+        width: 380px;
+        transition: bottom .75s ease-in-out;
+    }
+
+    .modal-sheet .modal-footer {
+        padding-bottom: 2rem;
+    }
+
+    .card {
+        position: relative;
+    }
+
+    .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .lb-closeContainer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 5px;
+        cursor: pointer;
+        z-index: 2000;
+        color: white;
+    }
+
+    /* Add this to ensure flex alignment */
+
+
+    /* Adjust card margin and padding for spacing */
+
+
+
+    /* Rest of your styles */
+</style>
+
+
+
+
 <div class="album py-5 bg-body-tertiary">
     <div class="container">
-
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <!-- Loop through images -->
             {% for image in images %}
             <div class="col">
                 <div class="card shadow-lg bg-body-tertiary rounded">
-                    <img src="{{ image.image.url }}" alt="{{ image.title }} ">
+                    <a href="{{ image.image.url }}" data-lightbox="image-gallery" data-title="{{ image.title }}">
+                        <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                    </a>
+
                     <div class="card-body">
-                        <div class="d-flex align-items-center">                            
-                            <a href="https://www.google.com" target="_blank"  class=" material-symbols-outlined  btn-outline-success p-1">
-                                    chat                                
-                            </a>                         
-                            
-                            <small class="text-body-secondary">comments</small>
+                        <div class="d-flex align-items-center">
+                            <!-- Add comments button with data attributes -->
+
+                            <a href="#" class="comments-button" data-image="{{ image.image.url }}"
+                                data-title="{{ image.title }}" data-photo-id="{{ image.id }}">
+                                <span class="material-symbols-outlined">
+                                    forum
+                                </span>
+                            </a><small id="comment-count-{{ image.id }}">Loading...</small>
 
                         </div>
                     </div>
@@ -39,5 +123,175 @@
         </div>
     </div>
 </div>
+
+<!-- Modal for displaying image and comments -->
+<div id="comments-modal" class="modal ">
+    <div class="modal-content modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-header sticky-top bg-white d-flex justify-content-between">
+            <h5 class="modal-title mx-auto bg-white"></h5>
+
+        </div>
+        <div class="modal-body bg-white">
+            <img id="modal-image" src="" alt="" width="1200px" height="900px"
+                class="img-fluid shadow-lg bg-body-tertiary rounded sticky-top bg-white d-flex justify-content-between">
+            <h2 id="modal-title"></h2>
+            <h2 class="text-center"> Comments</h2>
+            <div id="comments-list" class="mt-1">
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <form id="add-comment-form" class="form-floating form-control-sm">
+                <input type="text" id="comment-text" placeholder="Add a comment" class="form-control rounded-3">
+                <button type="submit" class="mb-1 btn btn-lg rounded-3 btn-primary">Submit</button>
+            </form>
+            <span class="close-button"><span class="material-symbols-outlined">
+                    cancel
+                </span></span>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    // Get modal and close button
+    const modal = document.getElementById("comments-modal");
+    const closeBtn = document.querySelector(".close-button");
+
+    // Get elements in the modal
+    const modalImage = document.getElementById("modal-image");
+    const modalTitle = document.getElementById("modal-title");
+    const commentsList = document.getElementById("comments-list");
+    const addCommentForm = document.getElementById("add-comment-form");
+    const commentText = document.getElementById("comment-text");
+
+    // Add event listeners to comments buttons
+    const commentsButtons = document.querySelectorAll(".comments-button");
+    commentsButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            // Get image and title from data attributes
+            const imageUrl = button.getAttribute("data-image");
+            const imageTitle = button.getAttribute("data-title");
+            const photoId = button.getAttribute("data-photo-id");
+
+
+            // Populate modal with image and title
+            modalImage.src = imageUrl;
+            modalTitle.textContent = imageTitle;
+
+            // Fetch comments from the database and populate commentsList
+            // You'll need to implement this part using an AJAX request or fetch()
+
+            // Show the modal
+            modal.style.display = "block";
+        });
+    });
+
+    // Close the modal when the close button is clicked
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    // Close the modal if the user clicks outside of it
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    // Add event listener to the comment form
+    addCommentForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        // Get the comment text from the input field
+        const newComment = commentText.value;
+
+        // You'll need to implement adding the comment to the database
+        // and then updating the commentsList with the new comment
+
+        // Clear the input field
+        commentText.value = "";
+    });
+    // Function to fetch and display comments
+    function fetchAndDisplayComments(photoId) {
+        // Fetch comments for the given photoId from the backend
+        // Inside the fetchAndDisplayComments function
+        fetch(`/get-comments/?photo_id=${photoId}`)
+            .then(response => response.json())
+            .then(data => {
+                // Clear previous comments
+                commentsList.innerHTML = '';
+
+                // Display the fetched comments
+                data.comments.forEach(comment => {
+                    // Create a comment card
+                    const commentCard = document.createElement("div");
+                    commentCard.classList.add("card", "mb-4");
+
+                    // Create the card body
+                    const cardBody = document.createElement("div");
+                    cardBody.classList.add("card-body");
+                    cardBody.textContent = comment.text;
+
+                    // Append the card body to the comment card
+                    commentCard.appendChild(cardBody);
+
+                    // Append the comment card to the comments list
+                    commentsList.appendChild(commentCard);
+                });
+            })
+            .catch(error => console.error(error));
+
+    }
+
+    // Add event listeners to comments buttons
+    commentsButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const imageUrl = button.getAttribute("data-image");
+            const imageTitle = button.getAttribute("data-title");
+            const photoId = button.getAttribute("data-photo-id");  // Add this attribute
+
+            // Populate modal with image and title
+            modalImage.src = imageUrl;
+            modalTitle.textContent = imageTitle;
+
+            // Fetch and display comments
+            fetchAndDisplayComments(photoId);
+
+            // Show the modal
+            modal.style.display = "block";
+        });
+    });
+
+    // JavaScript code to fetch and display comment counts
+    document.addEventListener("DOMContentLoaded", () => {
+        const commentCountElements = document.querySelectorAll("[id^='comment-count-']");
+
+        commentCountElements.forEach(countElement => {
+            const imageId = countElement.id.split("-")[2]; // Extract the image id from the id attribute
+
+            // Fetch comment count for the image
+            fetch(`/get-comment-count/?photo_id=${imageId}`) // Replace with your actual URL
+                .then(response => response.json())
+                .then(data => {
+                    countElement.textContent = `${data.commentCount} `;
+                })
+                .catch(error => console.error(error));
+        });
+    });
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true,
+        'alwaysShowNavOnTouchDevices': true,
+        'disableScrolling': true,
+        'showImageNumberLabel': false,
+        'albumLabel': "Image %1 of %2",
+        'fitImagesInViewport': false, // Important for full-page display
+        'positionFromTop': 50, // Adjust as needed
+        'disableKeyboardNav': false // Enable keyboard navigation
+    });
+</script>
+
 
 {% endblock %}

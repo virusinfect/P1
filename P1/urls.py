@@ -30,11 +30,13 @@ urlpatterns = [
     path('sports/<int:main_category_id>/', category_view.subcategories_list, name='sports'),
     path('video/', views.video, name='video'),
     path('album/<int:child_category_id>/', category_view.child_category_images, name='album'),
+    path('get-comments/', category_view.get_comments, name='comments'),
     path('', views.index, name='index'),
     path('test/', views.test, name='test'),
     path('set_language/<str:lang_code>/', SetLanguageView.as_view(), name='set_language'),
     path('backend/', admin_views.backend, name='backend'),
     path('add_founders/', admin_views.add_founders, name='add_founders'),
+    path('get-comment-count/', category_view.get_comment_count, name='get_comment_count'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -11,13 +11,15 @@
     <link href="{% static 'css/animate.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <style>
         .material-symbols-outlined {
           font-variation-settings:
           'FILL' 1,
           'wght' 700,
           'GRAD' 0,
-          'opsz' 40
+          'opsz' 48,
         }
     </style>
 
@@ -57,7 +59,7 @@
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="{% url 'sports' main_category_id=1 %}">{% trans 'Sports Overview'%}</a></li>
                           <li><a class="dropdown-item" href="#">{% trans 'Sports Teams'%}</a></li>
-                          <li><a class="dropdown-item" href="#">{% trans 'Veterans'%}</a></li>
+                          <li><a class="dropdown-item" href="{% url 'album' child_category_id=2 %}">{% trans 'Veterans'%}</a></li>
                           <li><a class="dropdown-item" href="#">{% trans 'Achievements'%}</a></li>
                           
                         </ul>

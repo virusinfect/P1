@@ -20,7 +20,7 @@
     {% for subcategory in subcategories %}
     <div class="col">
       <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-        style="background-image: url('{{ subcategory.image.url }}');">
+        style="background-image: url('{{ subcategory.image.url }}'); background-size: cover; background-position: center center;">
         <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
           <a class=" link-light pt-5 mt-5 mb-4 display-6 lh-1 fw-bold link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
             href="#collapse{{ subcategory.id }}" data-bs-toggle="collapse">{{ subcategory.name }}</a>
