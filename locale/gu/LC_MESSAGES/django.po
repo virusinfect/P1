@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-19 13:16+0300\n"
+"POT-Creation-Date: 2023-08-21 15:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,108 +17,113 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\app\templates\backend\base.html:7
-msgid "Admin"
+#: .\P1\settings.py:111
+msgid "English"
 msgstr ""
 
-#: .\app\templates\backend\base.html:39
-msgid "Add Founding Members"
+#: .\P1\settings.py:112
+msgid "Gujarati"
 msgstr ""
 
-#: .\app\templates\backend\base.html:96 .\app\templates\base.html:103
-#: .\app\templates\login.html:25
-msgid "Lang"
-msgstr "લેંગ"
-
-#: .\app\templates\base.html:41
+#: .\app\templates\base.html:50
 msgid "Home"
 msgstr "ઘર"
 
-#: .\app\templates\base.html:45
+#: .\app\templates\base.html:55
 msgid "About Us"
 msgstr "અમારા વિશે"
 
-#: .\app\templates\base.html:48
+#: .\app\templates\base.html:58
 msgid "History"
 msgstr "ઇતિહાસ"
 
-#: .\app\templates\base.html:49
+#: .\app\templates\base.html:59
 msgid "Founding Members"
 msgstr "સ્થાપક સભ્યો"
 
-#: .\app\templates\base.html:50
+#: .\app\templates\base.html:61
+msgid "Past Chairman"
+msgstr "ભૂતકાળના અધ્યક્ષ"
+
+#: .\app\templates\base.html:63
 msgid "Timeline"
 msgstr "સમયરેખા"
 
-#: .\app\templates\base.html:55
+#: .\app\templates\base.html:69
 msgid "Sports"
 msgstr "રમતગમત"
 
-#: .\app\templates\base.html:58 .\app\templates\sports.html:8
-msgid "Sports Overview"
+#: .\app\templates\base.html:72
+#, fuzzy
+#| msgid "Sports Overview"
+msgid "SportsOverview"
 msgstr "રમતગમતની ઝાંખી"
 
-#: .\app\templates\base.html:59
+#: .\app\templates\base.html:73
 msgid "Sports Teams"
 msgstr "રમતગમત ટીમો"
 
-#: .\app\templates\base.html:60
+#: .\app\templates\base.html:74
 msgid "Veterans"
 msgstr "વેટરન્સ"
 
-#: .\app\templates\base.html:61 .\app\templates\base.html:72
+#: .\app\templates\base.html:75 .\app\templates\base.html:87
 msgid "Achievements"
 msgstr "સિદ્ધિઓ"
 
-#: .\app\templates\base.html:67
+#: .\app\templates\base.html:82
 msgid "Events"
 msgstr "ઘટનાઓ"
 
-#: .\app\templates\base.html:70
+#: .\app\templates\base.html:85
 msgid "Upcoming Events"
 msgstr "આગામી ઘટનાઓ"
 
-#: .\app\templates\base.html:71
+#: .\app\templates\base.html:86
 msgid "Past Events"
 msgstr "ભૂતકાળની ઘટનાઓ"
 
-#: .\app\templates\base.html:76
+#: .\app\templates\base.html:91
 msgid "Projects"
 msgstr "પ્રોજેક્ટ્સ"
 
-#: .\app\templates\base.html:80
+#: .\app\templates\base.html:96
 msgid "Celebration"
 msgstr "ઉજવણી"
 
-#: .\app\templates\base.html:83
+#: .\app\templates\base.html:99
 msgid "75 years Celebration"
 msgstr "75 વર્ષની ઉજવણી"
 
-#: .\app\templates\base.html:84
+#: .\app\templates\base.html:100
 msgid "100 years Celebration"
 msgstr "100 વર્ષની ઉજવણી"
 
-#: .\app\templates\base.html:89
+#: .\app\templates\base.html:106
 msgid "Content"
 msgstr "સામગ્રી"
 
-#: .\app\templates\base.html:92
+#: .\app\templates\base.html:109
 msgid "Video Interviews"
 msgstr "વિડિઓ ઇન્ટરવ્યુ"
 
-#: .\app\templates\base.html:93
+#: .\app\templates\base.html:111
 msgid "Books by Members"
 msgstr "સભ્યો દ્વારા પુસ્તકો"
 
-#: .\app\templates\founder_bio.html:18
+#: .\app\templates\base.html:121 .\app\templates\login.html:25
+msgid "Lang"
+msgstr "લેંગ"
+
+#: .\app\templates\chairman_bio.html:18 .\app\templates\founder_bio.html:18
 msgid "Close"
 msgstr "બંધ"
 
-#: .\app\templates\founders.html:13
-msgid "Our Founders"
-msgstr "અમારા સ્થાપકો"
+#: .\app\templates\chairmans.html:4 .\app\templates\chairmans.html:13
+msgid "Past Chairmans"
+msgstr "ભૂતકાળના અધ્યક્ષો"
 
-#: .\app\templates\founders.html:14
+#: .\app\templates\chairmans.html:14 .\app\templates\founders.html:14
 msgid ""
 "Welcometothepage dedicated to our founders, who are the\n"
 "                    cornerstone of our organization. Their collective vision "
@@ -131,17 +136,76 @@ msgid ""
 "founders are the heart of our story, architects\n"
 "                    of our legacy. Their legacy lives on in every "
 "achievement, and their impact strengthens our future."
-msgstr "અમારા સ્થાપકોને સમર્પિત પૃષ્ઠ પર આપનું સ્વાગત છે, જેઓ છે\n"
-"                    અમારી સંસ્થાનો પાયાનો પથ્થર. તેમની સામૂહિક દ્રષ્ટિ "
-"અને હિંમતે સફળતાનો અમારો માર્ગ મોકળો કર્યો છે.\n"
-"                    તેમના ચિત્રો તેમના સમર્પણ અને નવીનતાને કેપ્ચર કરે છે. "
-"પૃષ્ઠભૂમિમાંથી ઉભરતા, તેમના\n"
-"                    નેતૃત્વએ અમારી સફરને ઉન્નત બનાવી છે. આજે, અમે ઊભા છીએ "
-"તેમના ખભા, તેમની ભાવના દ્વારા માર્ગદર્શન, જેમ\n"
-"                    અમે પ્રગતિ અને પ્રેરણા ચલાવવાનું ચાલુ રાખીએ છીએ. આ "
-"સ્થાપકો અમારી વાર્તાનું હૃદય છે, આર્કિટેક્ટ્સ\n"
-"                    અમારા વારસાની. તેમનો વારસો દરેકમાં જીવે છે "
-"સિદ્ધિ, અને તેમની અસર આપણા ભવિષ્યને મજબૂત બનાવે છે."
+msgstr ""
+"અમારા સ્થાપકોને સમર્પિત પૃષ્ઠ પર આપનું સ્વાગત છે, જેઓ છે\n"
+"                    અમારી સંસ્થાનો પાયાનો પથ્થર. તેમની સામૂહિક દ્રષ્ટિ અને હિંમતે "
+"સફળતાનો અમારો માર્ગ મોકળો કર્યો છે.\n"
+"                    તેમના ચિત્રો તેમના સમર્પણ અને નવીનતાને કેપ્ચર કરે છે. પૃષ્ઠભૂમિમાંથી "
+"ઉભરતા, તેમના\n"
+"                    નેતૃત્વએ અમારી સફરને ઉન્નત બનાવી છે. આજે, અમે ઊભા છીએ તેમના ખભા, "
+"તેમની ભાવના દ્વારા માર્ગદર્શન, જેમ\n"
+"                    અમે પ્રગતિ અને પ્રેરણા ચલાવવાનું ચાલુ રાખીએ છીએ. આ સ્થાપકો અમારી "
+"વાર્તાનું હૃદય છે, આર્કિટેક્ટ્સ\n"
+"                    અમારા વારસાની. તેમનો વારસો દરેકમાં જીવે છે સિદ્ધિ, અને તેમની અસર "
+"આપણા ભવિષ્યને મજબૂત બનાવે છે."
+
+#: .\app\templates\founders.html:13
+msgid "Our Founders"
+msgstr "અમારા સ્થાપકો"
+
+#: .\app\templates\index.html:10
+#, fuzzy
+#| msgid "100 years Celebration"
+msgid "100 years"
+msgstr "100 વર્ષની ઉજવણી"
+
+#: .\app\templates\index.html:23
+#, fuzzy
+#| msgid "Video Interviews"
+msgid "Interviews"
+msgstr "વિડિઓ ઇન્ટરવ્યુ"
+
+#: .\app\templates\index.html:24
+msgid ""
+"Step into a world of insights and inspiration with our captivating video\n"
+"                interviews. Immerse yourself in candid conversations with "
+"thought leaders, pioneers, and visionaries\n"
+"                from various fields."
+msgstr ""
+"અમારા મનમોહક વીડિયો ઇન્ટરવ્યુ સાથે આંતરદૃષ્ટિ અને પ્રેરણાની દુનિયામાં પ્રવેશ કરો. \n"
+"વિચારશીલ નેતાઓ, અગ્રણીઓ અને વિવિધ ક્ષેત્રોના સ્વપ્નદ્રષ્ટાઓ સાથે નિખાલસ વાતચીતમાં "
+"તમારી \n"
+"જાતને લીન કરો."
+
+#: .\app\templates\index.html:34
+msgid "Community Sports"
+msgstr "સમુદાય રમતો"
+
+#: .\app\templates\index.html:35
+msgid ""
+"Explore our photo gallery of a vibrant sports community that celebrates "
+"victories and fosters\n"
+"                    camaraderie. Diverse teams,\n"
+"                    thrilling matches, and dynamic events define us."
+msgstr ""
+"વાઇબ્રન્ટ સ્પોર્ટ્સ સમુદાયની અમારી ફોટો ગેલેરીનું અન્વેષણ કરો જે જીતની ઉજવણી \n"
+"કરે છે અને મિત્રતાને પ્રોત્સાહન આપે છે. વિવિધ ટીમોની રોમાંચક મેચો અને ગતિશીલ ઘટનાઓ\n"
+" આપણને વ્યાખ્યાયિત કરે છે."
+
+#: .\app\templates\index.html:43
+#, fuzzy
+#| msgid "Our Founders"
+msgid "Our Patrons"
+msgstr "અમારા સ્થાપકો"
+
+#: .\app\templates\index.html:44
+msgid ""
+"Or, keep it light and add a border for some added definition to the "
+"boundaries of your content. Be\n"
+"                    sure to look under the hood at the source HTML here as "
+"we've adjusted the alignment and sizing of\n"
+"                    both column's content for equal-height."
+msgstr ""
 
 #: .\app\templates\login.html:7 .\app\templates\translationdata.txt:29
 #: .\app\templates\translationdata.txt:36
@@ -168,6 +232,10 @@ msgstr "મને યાદ:"
 msgid "Sign in:"
 msgstr "સાઇન ઇન કરો:"
 
+#: .\app\templates\sports.html:8
+msgid "Sports Overview"
+msgstr "રમતગમતની ઝાંખી"
+
 #: .\app\templates\sports.html:10
 msgid ""
 "\n"
@@ -179,12 +247,12 @@ msgid ""
 "for enduring experiences."
 msgstr ""
 "\n"
-"      એક વાઇબ્રન્ટ સ્પોર્ટ્સ સમુદાયને આલિંગવું કે જે વિજય અને ઉત્તેજનની ઉજવણી કરે છે "
-"મિત્રતા વિવિધ ટીમો, રોમાંચક\n"
-"      મેચો અને રોમાંચક ઘટનાઓ અમારી સફરને સ્પષ્ટ કરે છે. અમારા કેપ્ચર "
-"અમારી ફોટો ગેલેરીનું અન્વેષણ કરીને પ્રવાસનો સાર.\n"
-"      આનંદની ભાવના શેર કરો, કાયમી યાદો બનાવો અને અમારી સાથે જોડાઓ "
-"સ્થાયી અનુભવો માટે."
+"      એક વાઇબ્રન્ટ સ્પોર્ટ્સ સમુદાયને આલિંગવું કે જે વિજય અને ઉત્તેજનની ઉજવણી કરે છે મિત્રતા "
+"વિવિધ ટીમો, રોમાંચક\n"
+"      મેચો અને રોમાંચક ઘટનાઓ અમારી સફરને સ્પષ્ટ કરે છે. અમારા કેપ્ચર અમારી ફોટો ગેલેરીનું "
+"અન્વેષણ કરીને પ્રવાસનો સાર.\n"
+"      આનંદની ભાવના શેર કરો, કાયમી યાદો બનાવો અને અમારી સાથે જોડાઓ સ્થાયી અનુભવો "
+"માટે."
 
 #: .\app\templates\translationdata.txt:8
 msgid "User Login"

@@ -7,8 +7,8 @@
 <section class="py-5 text-center container">
     <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">{{ child_category.name }}</h1>
-            <p class="lead text-body-secondary">Something short and leading about the collection below—its contents, the
+            <h1 class="text-white">{{ child_category.name }}</h1>
+            <p class="text-white">Something short and leading about the collection below—its contents, the
                 creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.
             </p>
         </div>
@@ -93,7 +93,7 @@
 
 
 
-<div class="album py-5 bg-body-tertiary">
+<div class="album py-5">
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <!-- Loop through images -->
@@ -134,16 +134,19 @@
         <div class="modal-body bg-white">
             <img id="modal-image" src="" alt="" width="1200px" height="900px"
                 class="img-fluid shadow-lg bg-body-tertiary rounded sticky-top bg-white d-flex justify-content-between">
-            <h2 id="modal-title"></h2>
+            <h2 id="modal-title" class=""></h2>
             <h2 class="text-center"> Comments</h2>
             <div id="comments-list" class="mt-1">
 
             </div>
         </div>
         <div class="modal-footer">
-            <form id="add-comment-form" class="form-floating form-control-sm">
+            <form id="add-comment-form" class="form form-control-sm" method="post" action="#">
+
+                {% csrf_token %}
+                <input type="hidden" id="comment-photo-id" name="photo_id">
                 <input type="text" id="comment-text" placeholder="Add a comment" class="form-control rounded-3">
-                <button type="submit" class="mb-1 btn btn-lg rounded-3 btn-primary">Submit</button>
+                <button type="submit" class="mb-1 btn btn-sm rounded-3 btn-primary">Submit</button>
             </form>
             <span class="close-button"><span class="material-symbols-outlined">
                     cancel
@@ -206,6 +209,32 @@
 
         // Get the comment text from the input field
         const newComment = commentText.value;
+        const photoId = document.getElementById("comment-photo-id").value;
+
+        // Send the comment to the backend using fetch or AJAX
+        
+        const commentSubmissionUrl = "#";
+
+
+        fetch(commentSubmissionUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": "{{ csrf_token }}",
+            },
+            body: JSON.stringify({
+                text: newComment,
+                photo_id: photoId,
+            }),
+        })
+
+            .then(response => response.json())
+            .then(data => {
+                // Handle success or error response
+                // For example, you can update the comments list or show a success message
+                fetchAndDisplayComments(photoId); // Update comments after adding new comment
+            })
+            .catch(error => console.error(error));
 
         // You'll need to implement adding the comment to the database
         // and then updating the commentsList with the new comment
@@ -227,7 +256,7 @@
                 data.comments.forEach(comment => {
                     // Create a comment card
                     const commentCard = document.createElement("div");
-                    commentCard.classList.add("card", "mb-4");
+                    commentCard.classList.add("card", "mb-1");
 
                     // Create the card body
                     const cardBody = document.createElement("div");
@@ -280,17 +309,9 @@
                 .catch(error => console.error(error));
         });
     });
-    lightbox.option({
-        'resizeDuration': 200,
-        'wrapAround': true,
-        'alwaysShowNavOnTouchDevices': true,
-        'disableScrolling': true,
-        'showImageNumberLabel': false,
-        'albumLabel': "Image %1 of %2",
-        'fitImagesInViewport': false, // Important for full-page display
-        'positionFromTop': 50, // Adjust as needed
-        'disableKeyboardNav': false // Enable keyboard navigation
-    });
+
+
+
 </script>
 
 

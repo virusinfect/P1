@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import MainCategory, SubCategory, Photo, ChildCategory, Comment
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
@@ -23,3 +23,19 @@ def get_comment_count(request):
     photo = get_object_or_404(Photo, id=photo_id)
     comment_count = Comment.objects.filter(photo=photo, approved=True).count()
     return JsonResponse({'commentCount': comment_count})
+
+from django.http import JsonResponse
+
+def add_comment(request, photo_id):
+    if request.method == "POST":
+        text = request.POST.get("text")
+        photo_id = request.POST.get("photo_id")
+        
+        # Save the comment to the database
+        photo = Photo.objects.get(id=photo_id)
+        comment = Comment(text=text, photo=photo, approved=False)
+        comment.save()
+
+        return JsonResponse({"message": "Comment added successfully"})
+    
+    return JsonResponse({"message": "Error: Invalid request method"}, status=400)
