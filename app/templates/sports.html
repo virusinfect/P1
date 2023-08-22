@@ -5,16 +5,16 @@
 {% block content %}
 {% load static %}
 <div class="px-4 py-5 my-5 text-center">
-  <h1 class="display-5 fw-bold text-body-emphasis">{% trans 'Sports Overview' %} </h1>
+  <h1 class="display-5 fw-bold text-light">{% trans 'Sports Overview' %} </h1>
   <div class="col-lg-6 mx-auto">
-    <p class="lead mb-4">{% blocktrans %}
+    <p class="lead mb-4 text-light">{% blocktrans %}
       Embrace a vibrant sports community that celebrates victory and fosters friendship. Various teams, thrilling
       matches, and exciting events elucidate our journey. Capture our journey's essence by exploring our photo gallery.
       Share the spirit of fun, create lasting memories, and connect with us for enduring experiences.{% endblocktrans %}</p>
   </div>
 </div>
 <div class="container px-4 py-5" id="custom-cards">
-  <h2 class="pb-2 border-bottom text-center">{{ main_category.name }}</h2>
+  <h2 class="pb-2 border-bottom text-center text-light">{{ main_category.name }}</h2>
 
   <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
     {% for subcategory in subcategories %}
@@ -22,14 +22,14 @@
       <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
         style="background-image: url('{{ subcategory.image.url }}'); background-size: cover; background-position: center center;">
         <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-          <a class=" link-light pt-5 mt-5 mb-4 display-6 lh-1 fw-bold link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+          <a class=" link-light pt-5 mt-5 mb-4 display-7 lh-1 fw-bold link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
             href="#collapse{{ subcategory.id }}" data-bs-toggle="collapse">{{ subcategory.name }}</a>
 
           <div class="collapse" id="collapse{{ subcategory.id }}">
             <ul class="list-group list-group-numbered">
               {% for child_category in subcategory.childcategory_set.all %}
               <a href="{% url 'album' child_category_id=child_category.id %}" class=" link-light link-offset-2 link-underline link-underline-opacity-0">
-                <li>{{ child_category.name }} <span class="badge bg-primary rounded-pill">{{child_category.photo_set.count }}</span></li>
+                <li>{{ child_category.name }} <span class="badge bg-accent rounded-pill">{{child_category.photo_set.count }}</span></li>
               </a>
 
 

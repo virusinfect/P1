@@ -1,0 +1,63 @@
+// Import Bootstrap variables
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+
+// Your additional custom styles can follow...
+// Color variables
+$primary: #324937;
+$secondary: lighten($primary, 20%);
+$success: darken($primary, 10%);
+$info: lighten($primary, 10%);
+$warning: darken($primary, 5%);
+$danger: lighten($primary, 5%);
+$light: #f4f4f4;
+$dark: #333333;
+$accent: #F76C6C;
+
+// Apply the colors to Bootstrap components
+$theme-colors: (
+  primary: $primary,
+  secondary: $secondary,
+  success: $success,
+  info: $info,
+  warning: $warning,
+  danger: $danger,
+  light: $light,
+  dark: $dark,
+  accent : $accent,
+);
+
+// Import Bootstrap SCSS
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Additional styles
+.custom-styles {
+  // Example of applying custom colors to different elements
+  .navbar {
+    background-color: $primary;
+    color: $light;
+  }
+
+  .btn-primary {
+    background-color: $primary;
+    border-color: $primary;
+  }
+
+  .alert-info {
+    background-color: $info;
+    border-color: $info;
+    color: $dark;
+  }
+
+  .card {
+    background-color: $light;
+    border-color: $primary;
+  }
+
+  .text-primary {
+    color: $primary;
+  }
+}
+
+

@@ -5,11 +5,17 @@ from django.conf import settings
 from django.views import View
 from django.utils.translation import activate
 from .models import Video
+from django.http import HttpResponse
 
 def timeline(request):
     return render(request, 'timeline.html')
 def test(request):
     return render(request, 'test.html')
+def pdf(request):
+    with open('static/nature.pdf', 'rb') as pdf:
+        response = HttpResponse(pdf.read(), content_type='application/pdf')
+        response['Content-Disposition'] = 'inline;filename=mypdf.pdf'
+    return render(request, 'pdf_viewer.html')
 def members(request):
     return render(request, 'members.html')
 def founders(request):

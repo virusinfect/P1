@@ -1,0 +1,101 @@
+<nav class="navbar navbar-expand-lg rounded mt-3 bg-dark" aria-label="Thirteenth navbar example">
+    <div class="container-fluid">
+
+        <img class="navbar-brand" src="{% static 'logo.png' %}" width="90px" height="90px" />
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11"
+            aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-between" id="navbarsExample11">
+
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'index' %}">{% trans 'Home'%}</a>
+                </li>
+                <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active text-light" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            {% trans 'About Us' %}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">{% trans 'History'%}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'founders' %}">{% trans 'Founding Members'%}</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'chairmans' %}">{% trans 'Past Chairman'%}</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'timeline' %}">{% trans 'Timeline'%}</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active text-light" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            {% trans 'Sports'%}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'sports' main_category_id=1 %}">{% trans 'SportsOverview'%}</a></li>
+                            <li><a class="dropdown-item" href="#">{% trans 'Sports Teams'%}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'album' child_category_id=2 %}">{% trans 'Veterans'%}</a></li>
+                            <li><a class="dropdown-item" href="#">{% trans 'Achievements'%}</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active text-light" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            {% trans 'Events'%}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">{% trans 'Upcoming Events'%}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'events' %}">{% trans 'Past Events'%}</a></li>
+                            <li><a class="dropdown-item" href="#">{% trans 'Achievements'%}</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="#">{% trans 'Projects'%}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="{% url 'senior' main_category_id=3 %}">{% trans 'Senior citizens'%}</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active text-light" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            {% trans 'Celebration'%}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url '75years' video_id=2 %}">{% trans '75 years Celebration'%}</a></li>
+                            <li><a class="dropdown-item" href="#">{% trans '100 years Celebration'%}</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active text-light" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            {% trans 'Content'%}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'videolist' %}">{% trans 'Video Interviews'%}</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">{% trans 'Books by Members'%}</a></li>
+                        </ul>
+                    </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="languageDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ lang_name }}{% trans 'Lang' %}
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                        {% get_available_languages as languages %}
+                        {% for lang_code, lang_name in languages %}
+                        <li><a class="dropdown-item" href="{% url 'set_language' lang_code %}">{{ lang_name }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

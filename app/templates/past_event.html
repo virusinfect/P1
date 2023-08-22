@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}About Us - My Django App{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold text-light">{{ main_category.name }}</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4 text-light">
+            Embrace a vibrant sports community that celebrates victory and fosters friendship. Various teams, thrilling
+            matches, and exciting events elucidate our journey. Capture our journey's essence by exploring our photo
+            gallery.
+            Share the spirit of fun, create lasting memories, and connect with us for enduring experiences.</p>
+    </div>
+</div>
+<div class="container mt-5">
+    {% for child_category in child_categories %}
+    <div class="card mb-5" style="background-color: rgba(255, 255, 255, 0.5);">
+        <h2 class="card-header text-center text-dark">{{ child_category.name }}</h2>
+        <div class="card-body d-flex flex-wrap justify-content-center align-items-center">
+            {% for photo in child_category.photo_set.all|slice:":4" %}
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="gallery-item p-2" >
+                    <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="img-fluid shadow-lg bg-light rounded" >
+                </div>
+            </div>
+            {% endfor %}
+            <div class="col-12 text-center mt-3">
+                <a href="{% url 'album' child_category_id=child_category.id %}" class="btn btn-primary">View More</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+<!-- ... (remaining code) ... -->
+
+
+{% endblock %}

@@ -39,3 +39,25 @@ def add_comment(request, photo_id):
         return JsonResponse({"message": "Comment added successfully"})
     
     return JsonResponse({"message": "Error: Invalid request method"}, status=400)
+
+def event_category_view(request):
+    main_category_id = 2  # Replace with the actual main category ID you want to display
+    main_category = MainCategory.objects.get(pk=main_category_id)
+    child_categories = ChildCategory.objects.filter(parent_category__parent_category=main_category)
+
+    context = {
+        'main_category': main_category,
+        'child_categories': child_categories,
+    }
+    return render(request, 'past_event.html', context)
+
+def senior_category_detail(request, main_category_id):
+    main_category = MainCategory.objects.get(pk=main_category_id)
+    subcategories = main_category.subcategory_set.all()
+
+    context = {
+        'main_category': main_category,
+        'subcategories': subcategories,
+    }
+
+    return render(request, 'senior.html', context)

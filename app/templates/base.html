@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Jaffery Sports Club{% endblock %}</title>
     {% load static %}
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="{% static 'css/animate.css' %}" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
 
     <style>
         body {
-            background-color: #6A8371;
+            background-color: #4b6754;
             background-size: cover;
             /* Adjust as needed */
-            background-repeat: no-repeat;
+            /* background-repeat: no-repeat; */
+            
+
         }
 
         .material-symbols-outlined {
@@ -28,180 +31,254 @@
                 'GRAD' 0,
                 'opsz' 48,
         }
+
+        .ball-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw; /* Use viewport width */
+            height: 100vh; /* Use viewport height */
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .ball {
+            position: absolute;
+            /* Use absolute positioning */
+            border-radius: 100%;
+            opacity: 0.7;
+        }
+
+
+        .navbar {
+            background-color: primary;
+            color: light;
+            
+        }
     </style>
 
 </head>
 
 <body>
-    <!-- Static Navigation Bar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded bg-success background-color: transparent;"
-        aria-label="Thirteenth navbar example">
-        <div class="container-fluid">
-            <a class="navbar-brand col-lg-3 me-0" href="#">Jaffery Sports Club</a>
+    <div class="ball-container">
+        <!-- Ball Animation -->
+        <script>
+            // Some random colors
+            const colors = ["#324752", "#324937", "#473232", "#324752", "#F85F36"];
 
+            const numBalls = 200;
+            const balls = [];
+
+            for (let i = 0; i < numBalls; i++) {
+                let ball = document.createElement("div");
+                ball.classList.add("ball");
+                ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+                ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
+                ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+                ball.style.transform = `scale(${Math.random()})`;
+                ball.style.width = `${Math.random()}em`;
+                ball.style.height = ball.style.width;
+
+                balls.push(ball);
+                document.body.append(ball);
+            }
+
+            // Keyframes
+            balls.forEach((el, i, ra) => {
+                let to = {
+                    x: Math.random() * (i % 2 === 0 ? -11 : 11),
+                    y: Math.random() * 12
+                };
+
+                let anim = el.animate(
+                    [
+                        { transform: "translate(0, 0)" },
+                        { transform: `translate(${to.x}rem, ${to.y}rem)` }
+                    ],
+                    {
+                        duration: (Math.random() + 1) * 3000, // random duration
+                        direction: "alternate",
+                        fill: "both",
+                        iterations: Infinity,
+                        easing: "ease-in-out"
+                    }
+                );
+            });
+        </script>
+    </div>
+    <!-- Static Navigation Bar -->
+    <nav class="navbar navbar-expand-lg rounded mt-3 " aria-label="Thirteenth navbar example">
+        <div class="container-fluid justify-content-lg-center">
+            
+            <img class="navbar-brand  " src="{% static 'logo.png' %}" width="90px" height="90px" />
+    
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11"
                 aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-
-                <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+    
+            <div class="collapse navbar-collapse d-lg-flex justify-content-center align-items-center w-100" id="navbarsExample11">
+    
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">{% trans 'Home'%}</a>
+                        <a class="nav-link text-light" href="{% url 'index' %}">{% trans 'Home'%}</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            {% trans 'About Us' %}
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">{% trans 'History'%}</a></li>
-                            <li><a class="dropdown-item" href="{% url 'founders' %}">{% trans 'Founding Members'%}</a>
-                            </li>
-                            <li><a class="dropdown-item" href="{% url 'chairmans' %}">{% trans 'Past Chairman'%}</a>
-                            </li>
-                            <li><a class="dropdown-item" href="{% url 'timeline' %}">{% trans 'Timeline'%}</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            {% trans 'Sports'%}
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'sports' main_category_id=1 %}">{% trans
-                                    'SportsOverview'%}</a></li>
-                            <li><a class="dropdown-item" href="#">{% trans 'Sports Teams'%}</a></li>
-                            <li><a class="dropdown-item" href="{% url 'album' child_category_id=2 %}">{% trans
-                                    'Veterans'%}</a></li>
-                            <li><a class="dropdown-item" href="#">{% trans 'Achievements'%}</a></li>
-
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            {% trans 'Events'%}
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">{% trans 'Upcoming Events'%}</a></li>
-                            <li><a class="dropdown-item" href="#">{% trans 'Past Events'%}</a></li>
-                            <li><a class="dropdown-item" href="#">{% trans 'Achievements'%}</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">{% trans 'Projects'%}</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            {% trans 'Celebration'%}
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">{% trans '75 years Celebration'%}</a></li>
-                            <li><a class="dropdown-item" href="#">{% trans '100 years Celebration'%}</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            {% trans 'Content'%}
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'videolist' %}">{% trans 'Video Interviews'%}</a>
-                            </li>
-                            <li><a class="dropdown-item" href="#">{% trans 'Books by Members'%}</a></li>
-                        </ul>
-                    </li>
-
+                            <a class="nav-link dropdown-toggle active text-light" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                {% trans 'About Us' %}
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">{% trans 'History'%}</a></li>
+                                <li><a class="dropdown-item" href="{% url 'founders' %}">{% trans 'Founding Members'%}</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{% url 'chairmans' %}">{% trans 'Past Chairman'%}</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{% url 'timeline' %}">{% trans 'Timeline'%}</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active text-light" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                {% trans 'Sports'%}
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{% url 'sports' main_category_id=1 %}">{% trans 'SportsOverview'%}</a></li>
+                                <li><a class="dropdown-item" href="#">{% trans 'Sports Teams'%}</a></li>
+                                <li><a class="dropdown-item" href="{% url 'album' child_category_id=2 %}">{% trans 'Veterans'%}</a></li>
+                                <li><a class="dropdown-item" href="#">{% trans 'Achievements'%}</a></li>
+    
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active text-light" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                {% trans 'Events'%}
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">{% trans 'Upcoming Events'%}</a></li>
+                                <li><a class="dropdown-item" href="{% url 'events' %}">{% trans 'Past Events'%}</a></li>
+                                <li><a class="dropdown-item" href="#">{% trans 'Achievements'%}</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="#">{% trans 'Projects'%}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="{% url 'senior' main_category_id=3 %}">{% trans 'Senior citizens'%}</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active text-light" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                {% trans 'Celebration'%}
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{% url '75years' video_id=2 %}">{% trans '75 years Celebration'%}</a></li>
+                                <li><a class="dropdown-item" href="#">{% trans '100 years Celebration'%}</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active text-light" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                {% trans 'Content'%}
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{% url 'videolist' %}">{% trans 'Video Interviews'%}</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">{% trans 'Books by Members'%}</a></li>
+                            </ul>
+                        </li>
                 </ul>
-
-                <div class="d-lg-flex col-lg-3 justify-content-lg-end">
-                    <div class="dropdown">
-                        <button class="btn btn-outline-success dropdown-toggle p-1" type="button" id="languageDropdown"
+    
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown justify-content-lg-end">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="languageDropdown"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             {{ lang_name }}{% trans 'Lang' %}
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
                             {% get_available_languages as languages %}
                             {% for lang_code, lang_name in languages %}
                             <li><a class="dropdown-item" href="{% url 'set_language' lang_code %}">{{ lang_name }}</a>
                             </li>
                             {% endfor %}
                         </ul>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
+    
 
-    <div class="container mt-4">
+    <div class="mt-1">
         {% block content %}{% endblock %}
     </div>
-    <div class="container">
-        <footer class="py-5">
+
+    <footer class="footer mt-5 py-3 text-light">
+        <div class="container">
             <div class="row">
-                <div class="col-6 col-md-2 mb-3">
-                    <h5>Section</h5>
+                <div class="col-6 col-md-3 mb-3">
+                    <h5>Section 1</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Photos</a></li>
-
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Photos</a></li>
                     </ul>
                 </div>
-
-                <div class="col-6 col-md-2 mb-3">
-                    <h5>Section</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Photos</a></li>
-
+    
+                <div class="col-6 col-md-3 mb-3 ">
+                    <h5>Section 2</h5>
+                    <ul class="nav flex-column ">
+                        <li class="nav-item mb-2 "><a href="#" class="nav-link p-0 text-light">About</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Events</a></li>
                     </ul>
                 </div>
-
-                <div class="col-6 col-md-2 mb-3">
-                    <h5>Section</h5>
+    
+                <div class="col-6 col-md-3 mb-3">
+                    <h5>Section 3</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Photos</a></li>
-
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Contact</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Gallery</a></li>
                     </ul>
                 </div>
-
-                <div class="col-md-5 offset-md-1 mb-3">
+    
+                <div class="col-md-3 mb-3">
                     <form>
-                        <h5>Subscribe to our newsletter</h5>
-                        <p>Monthly digest of what's new and exciting from us.</p>
-                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                            <label for="newsletter1" class="visually-hidden">Email address</label>
-                            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        <h5>{% trans 'Subscribe to our newsletter' %}</h5>
+                        <p>{% trans 'To ge notified about  new and exciting information from us.' %}</p>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Email address" aria-label="Email address" aria-describedby="subscribe-btn">
+                            <button class="btn btn-primary" type="button" id="subscribe-btn">{% trans 'Subscribe' %}</button>
                         </div>
                     </form>
                 </div>
             </div>
-
-            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                <p>&copy; 2023 Jaffery Sports Club. All rights reserved.</p>
-                <ul class="list-unstyled d-flex">
-                    <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+        </div>
+    
+        <div class="container border-top py-4 my-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <p>&copy; {% trans '2023 Jaffery Sports Club. All rights reserved.' %}</p>
+                <ul class="list-unstyled d-flex gap-3">
+                    <li><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
                                 <use xlink:href="#twitter" />
                             </svg></a></li>
-                    <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                    <li><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
                                 <use xlink:href="#instagram" />
                             </svg></a></li>
-                    <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                    <li><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
                                 <use xlink:href="#facebook" />
                             </svg></a></li>
                 </ul>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
+    
+
 
 
     <!-- Link to Bootstrap JS (Popper.js and Bootstrap scripts are required for some features) -->
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
 
 
 

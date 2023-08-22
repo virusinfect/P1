@@ -26,13 +26,13 @@
     <div class="album py-5">
         <div class="container">
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-6 g-3">
                 {% for founder in founders %}
                 <div class="col">
                     <div class="card shadow-lg bg-body-tertiary rounded">
                         <a href="{% url 'founderbio' founder.id %}">
                             <img src="{{ founder.image.url }}" alt="{{ founder.name }}" class="card-img-top" width="300"
-                                height="400">
+                                height="280">
                         </a>
                     </div>
                 </div>

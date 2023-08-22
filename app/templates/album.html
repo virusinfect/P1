@@ -1,15 +1,15 @@
 {% extends "base.html" %}
-
-{% block title %}Album{% endblock %}
+{% load i18n %}
+{% block title %}{% trans 'Album'%}{% endblock %}
 
 {% block content %}
 {% load static %}
 <section class="py-5 text-center container">
     <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="text-white">{{ child_category.name }}</h1>
-            <p class="text-white">Something short and leading about the collection below—its contents, the
-                creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.
+            <h1 class="text-light">{{ child_category.name }}</h1>
+            <p class="text-light">Something short and leading about the collection below—its contents, the
+                creator, etc. Make it short , but not too short so folks don’t simply skip over it entirely.
             </p>
         </div>
     </div>
@@ -80,6 +80,30 @@
         color: white;
     }
 
+    .masonry-container {
+        column-count: 3;
+        /* Number of columns */
+        column-gap: 1rem;
+        /* Gap between columns */
+    }
+
+    .masonry-item {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 1rem;
+        /* Gap between items */
+        break-inside: avoid;
+        /* Prevent items from breaking across columns */
+    }
+
+    /* Placeholder styles for demonstration */
+    .masonry-item {
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        padding: 1rem;
+    }
+
+
     /* Add this to ensure flex alignment */
 
 
@@ -95,26 +119,21 @@
 
 <div class="album py-5">
     <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-2" >
             <!-- Loop through images -->
             {% for image in images %}
-            <div class="col">
-                <div class="card shadow-lg bg-body-tertiary rounded">
+            <div class="col mb-3 ">
+                <div class="card shadow-lg  rounded" style="background-color: rgba(255, 255, 255, 0.4);">
                     <a href="{{ image.image.url }}" data-lightbox="image-gallery" data-title="{{ image.title }}">
-                        <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                        <img src="{{ image.image.url }}" alt="{{ image.title }}" class="img-fluid">
                     </a>
 
-                    <div class="card-body">
+                    <div class="card-body" style="background-color: rgba(255, 255, 255, 0.3);">
                         <div class="d-flex align-items-center">
-                            <!-- Add comments button with data attributes -->
 
-                            <a href="#" class="comments-button" data-image="{{ image.image.url }}"
-                                data-title="{{ image.title }}" data-photo-id="{{ image.id }}">
-                                <span class="material-symbols-outlined">
-                                    forum
-                                </span>
-                            </a><small id="comment-count-{{ image.id }}">Loading...</small>
-
+                            <a href="#" class="comments-button text-dark" data-image="{{ image.image.url }}"
+                                data-title="{{ image.title }}" data-photo-id="{{ image.id }}"><small
+                                    id="comment-count-{{ image.id }}">Loading...</small><small>{% trans 'comments' %}</small></a>
                         </div>
                     </div>
                 </div>
@@ -124,33 +143,31 @@
     </div>
 </div>
 
+
 <!-- Modal for displaying image and comments -->
-<div id="comments-modal" class="modal ">
-    <div class="modal-content modal-dialog modal-dialog-centered modal-dialog-scrollable">
+<div id="comments-modal" class="modal">
+    <div class="modal-content modal-dialog modal-dialog-centered modal-dialog-scrollable" >
         <div class="modal-header sticky-top bg-white d-flex justify-content-between">
-            <h5 class="modal-title mx-auto bg-white"></h5>
-
+            <h5 class="modal-title mx-auto bg-white">{% trans 'Comments' %}</h5>
         </div>
-        <div class="modal-body bg-white">
-            <img id="modal-image" src="" alt="" width="1200px" height="900px"
-                class="img-fluid shadow-lg bg-body-tertiary rounded sticky-top bg-white d-flex justify-content-between">
+        <div class="modal-body " >
+            <img id="modal-image" src="" alt="" class="img-fluid shadow-lg bg-body-tertiary rounded sticky-top bg-white d-flex justify-content-between">
             <h2 id="modal-title" class=""></h2>
-            <h2 class="text-center"> Comments</h2>
-            <div id="comments-list" class="mt-1">
-
-            </div>
+            
+            <div id="comments-list" class="mt-1"></div>
         </div>
         <div class="modal-footer">
-            <form id="add-comment-form" class="form form-control-sm" method="post" action="#">
-
+            <form id="add-comment-form" class="form" method="post" action="#">
                 {% csrf_token %}
                 <input type="hidden" id="comment-photo-id" name="photo_id">
-                <input type="text" id="comment-text" placeholder="Add a comment" class="form-control rounded-3">
-                <button type="submit" class="mb-1 btn btn-sm rounded-3 btn-primary">Submit</button>
+                <div class="input-group mb-3">
+                    <input type="text" id="comment-text" placeholder="{% trans 'Add a comment' %}" class="form-control rounded-3">
+                    <button type="submit" class="btn btn-primary">{% trans 'Submit' %}</button>
+                </div>
             </form>
-            <span class="close-button"><span class="material-symbols-outlined">
-                    cancel
-                </span></span>
+            <button class="close-button btn btn-secondary">
+                <span class="material-symbols-outlined">cancel</span>
+            </button>
         </div>
     </div>
 </div>
@@ -212,7 +229,7 @@
         const photoId = document.getElementById("comment-photo-id").value;
 
         // Send the comment to the backend using fetch or AJAX
-        
+
         const commentSubmissionUrl = "#";
 
 

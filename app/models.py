@@ -54,8 +54,6 @@ class Comment(models.Model):
     def __str__(self):
         return self.text
 
-from django.db import models
-
 
 class Chairman(models.Model):
     name = models.CharField(max_length=100)

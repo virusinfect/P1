@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Video Player - My Django App{% endblock %}
+{% block title %}{{ video.title }}{% endblock %}
 
 {% block content %}
 {% load static %}
@@ -24,16 +24,16 @@
 <section class="py-5 text-center container">
     <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">{{ video.title }}</h1>
-            <p class="lead text-body-secondary">{{ video.description }}</p>
+            <h1 class="fw-light text-light">{{ video.title }}</h1>
+            <p class="lead  text-light">{{ video.description }}</p>
         </div>
     </div>
 </section>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div id="video-container">
+<div class="container mt-5">
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-8" id="video-container">
+
                 <video id="video-player" controls autoplay muted>
                     <!-- Default video source -->
                     <source src="{{ parts.0.video_file.url }}" type="video/mp4">
@@ -44,8 +44,8 @@
             <div class="row mt-3">
                 {% for part in parts %}
                     <div class="col-md-3 mb-3">
-                        <button class="part-button btn btn-outline-success" data-src="{{ part.video_file.url }}">
-                            Part {{ part.part_number }}
+                        <button class="part-button  btn btn-light" data-src="{{ part.video_file.url }}">
+                            Watch Part {{ part.part_number }}
                         </button>
                     </div>
                 {% endfor %}

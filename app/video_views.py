@@ -15,3 +15,11 @@ def video_player(request, video_id):
         'parts': parts,
     }
     return render(request, 'video_player.html', context)
+
+def celebration_video(request, video_id):
+    try:
+        video = Video.objects.get(pk=video_id)
+    except Video.DoesNotExist:
+        video = None
+
+    return render(request, '75years.html', {'video': video})
