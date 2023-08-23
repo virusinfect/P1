@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-
-{% block title %}About Us - My Django App{% endblock %}
+{% load i18n %}
+{% block title %}{{ main_category.name }}{% endblock %}
 
 {% block content %}
 {% load static %}
@@ -32,7 +32,7 @@
                     
                 </div>
                 <div class="text-center">
-                    <a href="{% url 'album' child_category_id=child_category.id %}" class="btn btn-primary mb-5">View More</a>
+                    <a href="{% url 'album' child_category_id=child_category.id %}" class="btn btn-primary mb-5">{% trans 'View More' %}</a>
                 </div>
             </div>
             {% endfor %}

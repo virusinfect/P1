@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.forms.models import inlineformset_factory
 
-admin.site.site_title = "JSC"
-admin.site.site_header = "JSC"
-admin.site.index_title = "Adminstration"
+admin.site.site_title = "Jaffery Sports Club"
+admin.site.site_header = "Jaffery Sports Club"
+admin.site.index_title = "Admin"
 
 from .models import Founder, MainCategory, SubCategory, Photo, Comment, Tag, ChildCategory, Chairman, Video, VideoPart,PDFBook
 

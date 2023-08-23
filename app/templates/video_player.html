@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 {% block title %}{{ video.title }}{% endblock %}
 
 {% block content %}
@@ -45,7 +45,7 @@
                 {% for part in parts %}
                     <div class="col-md-3 mb-3">
                         <button class="part-button  btn btn-light shadow-lg" data-src="{{ part.video_file.url }}">
-                            Watch Part {{ part.part_number }}
+                            {% trans 'Watch Part' %} {{ part.part_number }}
                         </button>
                     </div>
                 {% endfor %}

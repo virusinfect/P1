@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-
-{% block title %}About Us - My Django App{% endblock %}
+{% load i18n %}
+{% block title %}75 YEARS CELEBRATION{% endblock %}
 
 {% block content %}
 {% load static %}
@@ -20,7 +20,7 @@
     }
 </style>
 <div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-bold text-light">75 YEARS CELEBRATION</h1>
+    <h1 class="display-5 fw-bold text-light">{% trans '75 YEARS CELEBRATION' %}</h1>
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4 text-light">
             Embrace a vibrant sports community that celebrates victory and fosters friendship. Various teams, thrilling
@@ -43,7 +43,7 @@
         <div class="col-md-8">
             <!-- Part Buttons -->
             {% for part in video.parts.all %}
-            <button class="btn btn-primary part-btn" data-src="{{ part.video_file.url }}">Part {{ part.part_number }}</button>
+            <button class="btn btn-primary part-btn" data-src="{{ part.video_file.url }}">{% trans 'Part' %} {{ part.part_number }}</button>
             {% endfor %}
         </div>
     </div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-18 15:46+0300\n"
+"POT-Creation-Date: 2023-08-23 16:41+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,128 +18,415 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\app\templates\backend\base.html:7
-msgid "Admin"
-msgstr ""
+#: .\app\templates\75years.html:23
+msgid "75 YEARS CELEBRATION"
+msgstr "CÉLÉBRATION DES 75 ANS"
 
-#: .\app\templates\backend\base.html:39
-msgid "Add Founding Members"
-msgstr ""
+#: .\app\templates\75years.html:46
+msgid "Part"
+msgstr "Partie"
 
-#: .\app\templates\backend\base.html:96 .\app\templates\base.html:93
-#: .\app\templates\login.html:25
-msgid "Lang"
-msgstr "Langue"
+#: .\app\templates\album.html:3
+msgid "Album"
+msgstr "Album"
 
-#: .\app\templates\base.html:31
+#: .\app\templates\album.html:136
+#, fuzzy
+#| msgid "Upcoming Events"
+msgid "comments"
+msgstr "évènements à venir"
+
+#: .\app\templates\album.html:151
+msgid "Comments"
+msgstr "commentaires"
+
+#: .\app\templates\album.html:164
+msgid "Add a comment"
+msgstr "Ajouter un commentaire"
+
+#: .\app\templates\album.html:165
+msgid "Submit"
+msgstr "Soumettre"
+
+#: .\app\templates\base.html:133 .\app\templates\index.html:3 .\static\scss\new
+#: 1.html:15
 msgid "Home"
 msgstr "Maison"
 
-#: .\app\templates\base.html:35
+#: .\app\templates\base.html:138 .\static\scss\new 1.html:20
 msgid "About Us"
 msgstr "À propos de nous"
 
-#: .\app\templates\base.html:38
+#: .\app\templates\base.html:141 .\static\scss\new 1.html:23
 msgid "History"
 msgstr "Histoire"
 
-#: .\app\templates\base.html:39
+#: .\app\templates\base.html:142 .\static\scss\new 1.html:24
 msgid "Founding Members"
 msgstr "Membres fondateurs"
 
-#: .\app\templates\base.html:40
+#: .\app\templates\base.html:144 .\static\scss\new 1.html:26
+msgid "Past Chairman"
+msgstr "Président sortant"
+
+#: .\app\templates\base.html:146 .\app\templates\timeline.html:3
+#: .\app\templates\timeline.html:8 .\static\scss\new 1.html:28
 msgid "Timeline"
 msgstr "Chronologie"
 
-#: .\app\templates\base.html:45
+#: .\app\templates\base.html:152 .\app\templates\base.html:238
+#: .\app\templates\index.html:40 .\static\scss\new 1.html:34
 msgid "Sports"
 msgstr "Des sports"
 
-#: .\app\templates\base.html:48
-msgid "Sports Overview"
+#: .\app\templates\base.html:155 .\static\scss\new 1.html:37
+#, fuzzy
+#| msgid "Sports Overview"
+msgid "SportsOverview"
 msgstr "Aperçu des sports"
 
-#: .\app\templates\base.html:49
+#: .\app\templates\base.html:156 .\static\scss\new 1.html:38
 msgid "Sports Teams"
 msgstr "Équipes sportives"
 
-#: .\app\templates\base.html:50
+#: .\app\templates\base.html:157 .\app\templates\base.html:241
+#: .\static\scss\new 1.html:39
 msgid "Veterans"
 msgstr "anciens combattants"
 
-#: .\app\templates\base.html:51 .\app\templates\base.html:62
+#: .\app\templates\base.html:158 .\app\templates\base.html:170
+#: .\static\scss\new 1.html:40 1.html:52
 msgid "Achievements"
 msgstr "Réalisations"
 
-#: .\app\templates\base.html:57
+#: .\app\templates\base.html:165 .\static\scss\new 1.html:47
 msgid "Events"
 msgstr "Événements"
 
-#: .\app\templates\base.html:60
+#: .\app\templates\base.html:168 .\static\scss\new 1.html:50
 msgid "Upcoming Events"
 msgstr "évènements à venir"
 
-#: .\app\templates\base.html:61
+#: .\app\templates\base.html:169 .\static\scss\new 1.html:51
 msgid "Past Events"
 msgstr "Événements passés"
 
-#: .\app\templates\base.html:66
+#: .\app\templates\base.html:174 .\static\scss\new 1.html:56
 msgid "Projects"
 msgstr "Projets"
 
-#: .\app\templates\base.html:70
+#: .\app\templates\base.html:177 .\static\scss\new 1.html:59
+msgid "Senior citizens"
+msgstr "personnes agées"
+
+#: .\app\templates\base.html:182 .\static\scss\new 1.html:64
 msgid "Celebration"
 msgstr "Fête"
 
-#: .\app\templates\base.html:73
+#: .\app\templates\base.html:185 .\static\scss\new 1.html:67
 msgid "75 years Celebration"
 msgstr "Fête des 75 ans"
 
-#: .\app\templates\base.html:74
+#: .\app\templates\base.html:186 .\static\scss\new 1.html:68
 msgid "100 years Celebration"
 msgstr "Fête des 100 ans"
 
-#: .\app\templates\base.html:79
+#: .\app\templates\base.html:192 .\static\scss\new 1.html:74
 msgid "Content"
 msgstr "Contenu"
 
-#: .\app\templates\base.html:82
+#: .\app\templates\base.html:195 .\static\scss\new 1.html:77
 msgid "Video Interviews"
 msgstr "Entrevues vidéo"
 
-#: .\app\templates\base.html:83
+#: .\app\templates\base.html:197 .\static\scss\new 1.html:79
 msgid "Books by Members"
 msgstr "Livres par les membres"
 
-#: .\app\templates\founder_bio.html:18
+#: .\app\templates\base.html:206 .\app\templates\login.html:25
+#: .\static\scss\new 1.html:88
+msgid "Lang"
+msgstr "Langue"
+
+#: .\app\templates\base.html:230
+msgid "Club"
+msgstr "club"
+
+#: .\app\templates\base.html:232
+#, fuzzy
+#| msgid "Founding Members"
+msgid "Founders"
+msgstr "Membres fondateurs"
+
+#: .\app\templates\base.html:233 .\app\templates\chairmans.html:4
+#: .\app\templates\chairmans.html:13
+msgid "Past Chairmans"
+msgstr "Anciens présidents"
+
+#: .\app\templates\base.html:240
+#, fuzzy
+#| msgid "Sports Overview"
+msgid "Overview"
+msgstr "Aperçu des sports"
+
+#: .\app\templates\base.html:246
+msgid "Media"
+msgstr "Médias"
+
+#: .\app\templates\base.html:248
+msgid "Videos"
+msgstr "Vidéos"
+
+#: .\app\templates\base.html:249 .\app\templates\book_list.html:3
+msgid "Books"
+msgstr "Livres"
+
+#: .\app\templates\base.html:263
+msgid "2023 Jaffery Sports Club. All rights reserved."
+msgstr "Club sportif Jaffery 2023. Tous droits réservés."
+
+#: .\app\templates\book_list.html:30
+msgid "TITLE"
+msgstr "TITRE"
+
+#: .\app\templates\book_list.html:32
+msgid "AUTHOR"
+msgstr "AUTEUR"
+
+#: .\app\templates\book_list.html:34
+msgid "DESCRIPTION"
+msgstr "DESCRIPTION"
+
+#: .\app\templates\book_list.html:36 .\app\templates\index.html:135
+msgid "Read Now"
+msgstr "Lisez maintenant"
+
+#: .\app\templates\chairman_bio.html:20 .\app\templates\founder_bio.html:19
 msgid "Close"
 msgstr "Fermer"
+
+#: .\app\templates\chairmans.html:14
+msgid ""
+"Welcome to thepage dedicated to our founders, who are the\n"
+"                    cornerstone of our organization. Their collective vision "
+"and courage have paved our way to success.\n"
+"                    Their portraits capture their dedication and innovation. "
+"Emerging from the backdrop, their\n"
+"                    leadership has elevated our journey. Today, we stand on "
+"their shoulders, guided by their spirit, as\n"
+"                    we continue to drive progress and inspiration. These "
+"founders are the heart of our story, architects\n"
+"                    of our legacy. Their legacy lives on in every "
+"achievement, and their impact strengthens our future."
+msgstr ""
+
+#: .\app\templates\founders.html:4 .\app\templates\founders.html:13
+#: .\app\templates\index.html:49
+msgid "Our Founders"
+msgstr "Nos fondateurs"
+
+#: .\app\templates\founders.html:14
+msgid ""
+"Welcometothepage dedicated to our founders, who are the\n"
+"                    cornerstone of our organization. Their collective vision "
+"and courage have paved our way to success.\n"
+"                    Their portraits capture their dedication and innovation. "
+"Emerging from the backdrop, their\n"
+"                    leadership has elevated our journey. Today, we stand on "
+"their shoulders, guided by their spirit, as\n"
+"                    we continue to drive progress and inspiration. These "
+"founders are the heart of our story, architects\n"
+"                    of our legacy. Their legacy lives on in every "
+"achievement, and their impact strengthens our future."
+msgstr ""
+
+#: .\app\templates\index.html:12
+#, fuzzy
+#| msgid "100 years Celebration"
+msgid "100 years"
+msgstr "Fête des 100 ans"
+
+#: .\app\templates\index.html:14
+msgid ""
+"Embracing Excellence and Unity in a Century of Celebration! Join us to\n"
+"                commemorate our community's 100-year journey, from humble "
+"beginnings to remarkable achievements. Let's\n"
+"                honor the past, embrace the present, and inspire the future. "
+"Here, a century of compassion,\n"
+"                perseverance, and dignity comes to life."
+msgstr ""
+
+#: .\app\templates\index.html:25
+#, fuzzy
+#| msgid "Video Interviews"
+msgid "Interviews"
+msgstr "Entrevues vidéo"
+
+#: .\app\templates\index.html:26
+msgid ""
+"Step into a world of insights and inspiration with our captivating video\n"
+"                interviews. Immerse yourself in candid conversations with "
+"thought leaders, pioneers, and visionaries\n"
+"                from various fields."
+msgstr ""
+
+#: .\app\templates\index.html:29 .\app\templates\video_list.html:34
+msgid "Watch Now"
+msgstr "Regarde maintenant"
+
+#: .\app\templates\index.html:36
+msgid "Community Sports"
+msgstr "Sports communautaires"
+
+#: .\app\templates\index.html:37
+msgid ""
+"Explore our photo gallery of a vibrant sports community that celebrates "
+"victories and fosters\n"
+"                    camaraderie. Diverse teams,\n"
+"                    thrilling matches, and dynamic events define us."
+msgstr ""
+
+#: .\app\templates\index.html:45
+msgid "Our Patrons"
+msgstr "Notre clientèle"
+
+#: .\app\templates\index.html:46
+msgid ""
+"Or, keep it light and add a border for some added definition to the "
+"boundaries of your content. Be\n"
+"                    sure to look under the hood at the source HTML here as "
+"we've adjusted the alignment and sizing of\n"
+"                    both column's content for equal-height."
+msgstr ""
+"Explorez notre galerie de photos d'une communauté sportive "
+"dynamique qui célèbre les victoires et favorise la camaraderie. \n"
+"                   Des équipes diversifiées, des matchs passionnants et des événements\n"
+"                    dynamiques nous définissent."
+#: .\app\templates\index.html:54
+msgid "Message from our leaders"
+msgstr "Message de nos dirigeants"
+
+#: .\app\templates\index.html:127
+msgid "75 YEARS ANNIVESSARY"
+msgstr "ANNIVERSAIRE DE 75 ANS"
+
+#: .\app\templates\index.html:130
+msgid ""
+"\n"
+"        Discover the rich legacy of our sports club as we celebrate 75 "
+"glorious years of triumphs and camaraderie. Immerse yourself in our "
+"remarkable journey through the pages of our special anniversary book. Join "
+"us in reliving the milestones that have shaped our club's history. While "
+"we're currently celebrating our 100th anniversary, this book is a tribute to "
+"the incredible 75 years that paved the way for our enduring success. Read "
+"Now and relish the memories!\n"
+"      "
+msgstr ""
+"\n"
+"Découvrez le riche héritage de notre club sportif alors que nous célébrons nos 75 ans"
+"des années glorieuses de triomphes et de camaraderie. Plongez-vous dans notre "
+"voyage remarquable à travers les pages de notre livre spécial anniversaire. Rejoignez"
+"nous fait revivre les étapes marquantes qui ont façonné l'histoire de notre club. Tandis que "
+"Nous fêtons actuellement notre 100ème anniversaire, ce livre est un hommage à"
+"les incroyables 75 années qui ont ouvert la voie à notre succès durable. Lire "
+"Maintenant et savourez les souvenirs !\n"
+" "
+#: .\app\templates\index.html:150
+msgid ""
+"\n"
+"          Join us in commemorating our momentous 100th anniversary by "
+"subscribing today to receive exclusive updates via email or SMS, ensuring "
+"you're always in the loop about fresh content and the latest news on our "
+"community. Embrace this opportunity to stay connected and engaged with our "
+"vibrant community as we celebrate a century of remarkable achievements. "
+"Don't miss out – subscribe now and be a part of our ongoing legacy!.\n"
+"        "
+msgstr ""
+"\n"
+"  Rejoignez-nous pour commémorer notre 100e anniversaire en vous abonnant "
+"aujourd'hui pour recevoir des mises à jour exclusives par e-mail ou SMS, "
+"vous assurant ainsi d'être toujours au courant des nouveaux contenus et des" 
+"dernières nouvelles de notre communauté. Saisissez cette opportunité de "
+"rester connecté et engagé avec notre communauté dynamique alors que nous "
+"célébrons un siècle de réalisations remarquables. Ne manquez pas cette "
+"opportunité – abonnez-vous maintenant et faites partie de notre héritage continu !\n"
+"        "
+#: .\app\templates\index.html:159
+msgid "Email address"
+msgstr "Adresse e-mail"
+
+#: .\app\templates\index.html:163
+msgid "Phone Number"
+msgstr "Numéro de téléphone"
+
+#: .\app\templates\index.html:166
+msgid "Subscribe"
+msgstr "S'abonner"
+
+#: .\app\templates\index.html:169
+msgid ""
+"\n"
+"            You have the flexibility to provide either your email address,"
+"phone number or both– choose whichever works best for you.\n"
+"          "
+msgstr ""
+"\n"
+"  Vous avez la possibilité de fournir votre adresse e-mail, votre numéro de"
+"téléphone ou les deux – choisissez celui qui vous convient le mieux.\n"
+"          "
 
 #: .\app\templates\login.html:7 .\app\templates\translationdata.txt:29
 #: .\app\templates\translationdata.txt:36
 msgid "Login"
-msgstr ""
+msgstr "Se connecter"
 
 #: .\app\templates\login.html:40
 msgid "Please Sign in:"
-msgstr ""
+msgstr "Veuillez vous connecter :"
 
 #: .\app\templates\login.html:45 .\app\templates\translationdata.txt:32
 msgid "Username:"
-msgstr ""
+msgstr "Nom d'utilisateur:"
 
 #: .\app\templates\login.html:50 .\app\templates\translationdata.txt:34
 msgid "Password:"
-msgstr ""
+msgstr "Mot de passe:"
 
 #: .\app\templates\login.html:56
 msgid "Remember-me:"
-msgstr ""
+msgstr "Souviens-toi de moi:"
 
 #: .\app\templates\login.html:59
 msgid "Sign in:"
+msgstr "Se connecter:"
+
+#: .\app\templates\past_event.html:31 .\app\templates\senior.html:35
+msgid "View More"
+msgstr "Voir plus"
+
+#: .\app\templates\sports.html:8
+msgid "Sports Overview"
+msgstr "Aperçu des sports"
+
+#: .\app\templates\sports.html:10
+msgid ""
+"\n"
+"      Embrace a vibrant sports community that celebrates victory and fosters "
+"friendship. Various teams, thrilling\n"
+"      matches, and exciting events elucidate our journey. Capture our "
+"journey's essence by exploring our photo gallery.\n"
+"      Share the spirit of fun, create lasting memories, and connect with us "
+"for enduring experiences."
 msgstr ""
 
 #: .\app\templates\translationdata.txt:8
 msgid "User Login"
 msgstr "Utilisateur en ligne"
+
+#: .\app\templates\video_list.html:30
+msgid "Part "
+msgstr "Partie"
+
+#: .\app\templates\video_player.html:48
+msgid "Watch Part"
+msgstr "Regarder la partie"

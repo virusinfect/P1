@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-22 15:18+0300\n"
+"POT-Creation-Date: 2023-08-23 16:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,111 +17,192 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\app\templates\base.html:125 .\app\templates\index.html:3 .\static\scss\new
+#: .\app\templates\75years.html:23
+msgid "75 YEARS CELEBRATION"
+msgstr "75 વર્ષની ઉજવણી"
+
+#: .\app\templates\75years.html:46
+msgid "Part"
+msgstr "ભાગ"
+
+#: .\app\templates\album.html:3
+msgid "Album"
+msgstr "આલ્બમ"
+
+#: .\app\templates\album.html:136
+#, fuzzy
+#| msgid "Upcoming Events"
+msgid "comments"
+msgstr "આગામી ઘટનાઓ"
+
+#: .\app\templates\album.html:151
+msgid "Comments"
+msgstr "ટિપ્પણીઓ"
+
+#: .\app\templates\album.html:164
+msgid "Add a comment"
+msgstr "એક ટિપ્પણી ઉમેરો"
+
+#: .\app\templates\album.html:165
+msgid "Submit"
+msgstr "સબમિટ કરો"
+
+#: .\app\templates\base.html:133 .\app\templates\index.html:3 .\static\scss\new
 #: 1.html:15
 msgid "Home"
 msgstr "ઘર"
 
-#: .\app\templates\base.html:130 .\static\scss\new 1.html:20
+#: .\app\templates\base.html:138 .\static\scss\new 1.html:20
 msgid "About Us"
 msgstr "અમારા વિશે"
 
-#: .\app\templates\base.html:133 .\static\scss\new 1.html:23
+#: .\app\templates\base.html:141 .\static\scss\new 1.html:23
 msgid "History"
 msgstr "ઇતિહાસ"
 
-#: .\app\templates\base.html:134 .\static\scss\new 1.html:24
+#: .\app\templates\base.html:142 .\static\scss\new 1.html:24
 msgid "Founding Members"
 msgstr "સ્થાપક સભ્યો"
 
-#: .\app\templates\base.html:136 .\static\scss\new 1.html:26
+#: .\app\templates\base.html:144 .\static\scss\new 1.html:26
 msgid "Past Chairman"
 msgstr "ભૂતકાળના અધ્યક્ષ"
 
-#: .\app\templates\base.html:138 .\static\scss\new 1.html:28
+#: .\app\templates\base.html:146 .\app\templates\timeline.html:3
+#: .\app\templates\timeline.html:8 .\static\scss\new 1.html:28
 msgid "Timeline"
 msgstr "સમયરેખા"
 
-#: .\app\templates\base.html:144 .\app\templates\index.html:38
-#: .\static\scss\new 1.html:34
+#: .\app\templates\base.html:152 .\app\templates\base.html:238
+#: .\app\templates\index.html:40 .\static\scss\new 1.html:34
 msgid "Sports"
 msgstr "રમતગમત"
 
-#: .\app\templates\base.html:147 .\static\scss\new 1.html:37
+#: .\app\templates\base.html:155 .\static\scss\new 1.html:37
 #, fuzzy
 #| msgid "Sports Overview"
 msgid "SportsOverview"
 msgstr "રમતગમતની ઝાંખી"
 
-#: .\app\templates\base.html:148 .\static\scss\new 1.html:38
+#: .\app\templates\base.html:156 .\static\scss\new 1.html:38
 msgid "Sports Teams"
 msgstr "રમતગમત ટીમો"
 
-#: .\app\templates\base.html:149 .\static\scss\new 1.html:39
+#: .\app\templates\base.html:157 .\app\templates\base.html:241
+#: .\static\scss\new 1.html:39
 msgid "Veterans"
 msgstr "વેટરન્સ"
 
-#: .\app\templates\base.html:150 .\app\templates\base.html:162
+#: .\app\templates\base.html:158 .\app\templates\base.html:170
 #: .\static\scss\new 1.html:40 1.html:52
 msgid "Achievements"
 msgstr "સિદ્ધિઓ"
 
-#: .\app\templates\base.html:157 .\static\scss\new 1.html:47
+#: .\app\templates\base.html:165 .\static\scss\new 1.html:47
 msgid "Events"
 msgstr "ઘટનાઓ"
 
-#: .\app\templates\base.html:160 .\static\scss\new 1.html:50
+#: .\app\templates\base.html:168 .\static\scss\new 1.html:50
 msgid "Upcoming Events"
 msgstr "આગામી ઘટનાઓ"
 
-#: .\app\templates\base.html:161 .\static\scss\new 1.html:51
+#: .\app\templates\base.html:169 .\static\scss\new 1.html:51
 msgid "Past Events"
 msgstr "ભૂતકાળની ઘટનાઓ"
 
-#: .\app\templates\base.html:166 .\static\scss\new 1.html:56
+#: .\app\templates\base.html:174 .\static\scss\new 1.html:56
 msgid "Projects"
 msgstr "પ્રોજેક્ટ્સ"
 
-#: .\app\templates\base.html:169 .\static\scss\new 1.html:59
+#: .\app\templates\base.html:177 .\static\scss\new 1.html:59
 msgid "Senior citizens"
-msgstr ""
+msgstr "વરિષ્ઠ નાગરિકો"
 
-#: .\app\templates\base.html:174 .\static\scss\new 1.html:64
+#: .\app\templates\base.html:182 .\static\scss\new 1.html:64
 msgid "Celebration"
 msgstr "ઉજવણી"
 
-#: .\app\templates\base.html:177 .\static\scss\new 1.html:67
+#: .\app\templates\base.html:185 .\static\scss\new 1.html:67
 msgid "75 years Celebration"
 msgstr "75 વર્ષની ઉજવણી"
 
-#: .\app\templates\base.html:178 .\static\scss\new 1.html:68
+#: .\app\templates\base.html:186 .\static\scss\new 1.html:68
 msgid "100 years Celebration"
 msgstr "100 વર્ષની ઉજવણી"
 
-#: .\app\templates\base.html:184 .\static\scss\new 1.html:74
+#: .\app\templates\base.html:192 .\static\scss\new 1.html:74
 msgid "Content"
 msgstr "સામગ્રી"
 
-#: .\app\templates\base.html:187 .\static\scss\new 1.html:77
+#: .\app\templates\base.html:195 .\static\scss\new 1.html:77
 msgid "Video Interviews"
 msgstr "વિડિઓ ઇન્ટરવ્યુ"
 
-#: .\app\templates\base.html:189 .\static\scss\new 1.html:79
+#: .\app\templates\base.html:197 .\static\scss\new 1.html:79
 msgid "Books by Members"
 msgstr "સભ્યો દ્વારા પુસ્તકો"
 
-#: .\app\templates\base.html:198 .\app\templates\login.html:25
+#: .\app\templates\base.html:206 .\app\templates\login.html:25
 #: .\static\scss\new 1.html:88
 msgid "Lang"
 msgstr "લેંગ"
 
-#: .\app\templates\chairman_bio.html:18 .\app\templates\founder_bio.html:18
-msgid "Close"
-msgstr "બંધ"
+#: .\app\templates\base.html:230
+msgid "Club"
+msgstr "ક્લબ"
 
-#: .\app\templates\chairmans.html:4 .\app\templates\chairmans.html:13
+#: .\app\templates\base.html:232
+#, fuzzy
+#| msgid "Our Founders"
+msgid "Founders"
+msgstr "અમારા સ્થાપકો"
+
+#: .\app\templates\base.html:233 .\app\templates\chairmans.html:4
+#: .\app\templates\chairmans.html:13
 msgid "Past Chairmans"
 msgstr "ભૂતકાળના અધ્યક્ષો"
+
+#: .\app\templates\base.html:240
+#, fuzzy
+#| msgid "Sports Overview"
+msgid "Overview"
+msgstr "રમતગમતની ઝાંખી"
+
+#: .\app\templates\base.html:246
+msgid "Media"
+msgstr "મીડિયા"
+
+#: .\app\templates\base.html:248
+msgid "Videos"
+msgstr "વિડિઓઝ"
+
+#: .\app\templates\base.html:249 .\app\templates\book_list.html:3
+msgid "Books"
+msgstr "પુસ્તકો"
+
+#: .\app\templates\base.html:263
+msgid "2023 Jaffery Sports Club. All rights reserved."
+msgstr "2023 જાફરી સ્પોર્ટ્સ ક્લબ. બધા હકો અમારી પાસે રાખેલા છે."
+
+#: .\app\templates\book_list.html:30
+msgid "TITLE"
+msgstr "શીર્ષક"
+
+#: .\app\templates\book_list.html:32
+msgid "AUTHOR"
+msgstr "લેખક"
+
+#: .\app\templates\book_list.html:34
+msgid "DESCRIPTION"
+msgstr "વર્ણન"
+
+#: .\app\templates\book_list.html:36 .\app\templates\index.html:135
+msgid "Read Now"
+msgstr "હવે વાંચો"
+
+#: .\app\templates\chairman_bio.html:20 .\app\templates\founder_bio.html:19
+msgid "Close"
+msgstr "બંધ"
 
 #: .\app\templates\chairmans.html:14
 #, fuzzy
@@ -162,7 +243,8 @@ msgstr ""
 "                    અમારા વારસાની. તેમનો વારસો દરેકમાં જીવે છે સિદ્ધિ, અને તેમની અસર "
 "આપણા ભવિષ્યને મજબૂત બનાવે છે."
 
-#: .\app\templates\founders.html:13 .\app\templates\index.html:47
+#: .\app\templates\founders.html:4 .\app\templates\founders.html:13
+#: .\app\templates\index.html:49
 msgid "Our Founders"
 msgstr "અમારા સ્થાપકો"
 
@@ -192,13 +274,13 @@ msgstr ""
 "                    અમારા વારસાની. તેમનો વારસો દરેકમાં જીવે છે સિદ્ધિ, અને તેમની અસર "
 "આપણા ભવિષ્યને મજબૂત બનાવે છે."
 
-#: .\app\templates\index.html:10
+#: .\app\templates\index.html:12
 #, fuzzy
 #| msgid "100 years Celebration"
 msgid "100 years"
 msgstr "100 વર્ષની ઉજવણી"
 
-#: .\app\templates\index.html:12
+#: .\app\templates\index.html:14
 msgid ""
 "Embracing Excellence and Unity in a Century of Celebration! Join us to\n"
 "                commemorate our community's 100-year journey, from humble "
@@ -208,13 +290,13 @@ msgid ""
 "                perseverance, and dignity comes to life."
 msgstr ""
 
-#: .\app\templates\index.html:23
+#: .\app\templates\index.html:25
 #, fuzzy
 #| msgid "Video Interviews"
 msgid "Interviews"
 msgstr "વિડિઓ ઇન્ટરવ્યુ"
 
-#: .\app\templates\index.html:24
+#: .\app\templates\index.html:26
 msgid ""
 "Step into a world of insights and inspiration with our captivating video\n"
 "                interviews. Immerse yourself in candid conversations with "
@@ -226,15 +308,15 @@ msgstr ""
 "તમારી \n"
 "જાતને લીન કરો."
 
-#: .\app\templates\index.html:27
+#: .\app\templates\index.html:29 .\app\templates\video_list.html:34
 msgid "Watch Now"
-msgstr ""
+msgstr "હવે જુઓ"
 
-#: .\app\templates\index.html:34
+#: .\app\templates\index.html:36
 msgid "Community Sports"
 msgstr "સમુદાય રમતો"
 
-#: .\app\templates\index.html:35
+#: .\app\templates\index.html:37
 msgid ""
 "Explore our photo gallery of a vibrant sports community that celebrates "
 "victories and fosters\n"
@@ -245,13 +327,13 @@ msgstr ""
 "કરે છે અને મિત્રતાને પ્રોત્સાહન આપે છે. વિવિધ ટીમોની રોમાંચક મેચો અને ગતિશીલ ઘટનાઓ\n"
 " આપણને વ્યાખ્યાયિત કરે છે."
 
-#: .\app\templates\index.html:43
+#: .\app\templates\index.html:45
 #, fuzzy
 #| msgid "Our Founders"
 msgid "Our Patrons"
 msgstr "અમારા સ્થાપકો"
 
-#: .\app\templates\index.html:44
+#: .\app\templates\index.html:46
 msgid ""
 "Or, keep it light and add a border for some added definition to the "
 "boundaries of your content. Be\n"
@@ -259,6 +341,79 @@ msgid ""
 "we've adjusted the alignment and sizing of\n"
 "                    both column's content for equal-height."
 msgstr ""
+
+#: .\app\templates\index.html:54
+msgid "Message from our leaders"
+msgstr "અમારા નેતાઓનો સંદેશ"
+
+#: .\app\templates\index.html:127
+msgid "75 YEARS ANNIVESSARY"
+msgstr "75 વર્ષગાંઠ"
+
+#: .\app\templates\index.html:130
+msgid ""
+"\n"
+"        Discover the rich legacy of our sports club as we celebrate 75 "
+"glorious years of triumphs and camaraderie. Immerse yourself in our "
+"remarkable journey through the pages of our special anniversary book. Join "
+"us in reliving the milestones that have shaped our club's history. While "
+"we're currently celebrating our 100th anniversary, this book is a tribute to "
+"the incredible 75 years that paved the way for our enduring success. Read "
+"Now and relish the memories!\n"
+"      "
+msgstr ""
+"\n"
+"   અમારી સ્પોર્ટ્સ ક્લબનો સમૃદ્ધ વારસો શોધો કારણ કે અમે વિજય અને મિત્રતાના 75 ગૌરવપૂર્ણ "
+"વર્ષોની ઉજવણી કરીએ છીએ. અમારા વિશેષ વર્ષગાંઠ પુસ્તકના પૃષ્ઠો દ્વારા અમારી નોંધપાત્ર મુસાફરીમાં "
+"તમારી જાતને લીન કરો. અમારા ક્લબના ઈતિહાસને આકાર આપનારા માઈલસ્ટોન્સને ફરીથી જીવંત "
+"કરવામાં અમારી સાથે જોડાઓ. જ્યારે અમે હાલમાં અમારી 100મી વર્ષગાંઠની ઉજવણી કરી રહ્યા છીએ, "
+"ત્યારે આ પુસ્તક એ અદ્ભુત 75 વર્ષ માટે શ્રદ્ધાંજલિ છે જેણે અમારી કાયમી સફળતાનો માર્ગ મોકળો કર્યો."
+"હમણાં વાંચો અને યાદોને માણો!\n"
+"      "
+
+#: .\app\templates\index.html:150
+msgid ""
+"\n"
+"          Join us in commemorating our momentous 100th anniversary by "
+"subscribing today to receive exclusive updates via email or SMS, ensuring "
+"you're always in the loop about fresh content and the latest news on our "
+"community. Embrace this opportunity to stay connected and engaged with our "
+"vibrant community as we celebrate a century of remarkable achievements. "
+"Don't miss out – subscribe now and be a part of our ongoing legacy!.\n"
+"        "
+msgstr ""
+"\n"
+"ઇમેઇલ અથવા SMS દ્વારા વિશિષ્ટ અપડેટ્સ મેળવવા માટે આજે જ સબ્સ્ક્રાઇબ કરીને અમારી મહત્વપૂર્ણ "
+"100મી વર્ષગાંઠની ઉજવણીમાં અમારી સાથે જોડાઓ, ખાતરી કરો કે તમે અમારા સમુદાય પરના નવીનતમ સામગ્રી "
+"અને નવીનતમ સમાચાર વિશે હંમેશા લૂપમાં છો. અમે નોંધપાત્ર સિદ્ધિઓની સદીની ઉજવણી કરીએ છીએ ત્યારે "
+"અમારા વાઇબ્રન્ટ સમુદાય સાથે જોડાયેલા રહેવા અને જોડાયેલા રહેવાની આ તકનો સ્વીકાર કરો. ચૂકશો નહીં - "
+"હમણાં સબ્સ્ક્રાઇબ કરો અને અમારા ચાલુ વારસાનો એક ભાગ બનો!\n"
+"        "
+
+
+#: .\app\templates\index.html:159
+msgid "Email address"
+msgstr "ઈ - મેઈલ સરનામું"
+
+#: .\app\templates\index.html:163
+msgid "Phone Number"
+msgstr "ફોન નંબર"
+
+#: .\app\templates\index.html:166
+msgid "Subscribe"
+msgstr "સબ્સ્ક્રાઇબ કરો"
+
+#: .\app\templates\index.html:169
+msgid ""
+"\n"
+"            You have the flexibility to provide either your email address,"
+"phone number or both– choose whichever works best for you.\n"
+"          "
+msgstr ""
+"\n"
+" તમારી પાસે તમારું ઇમેઇલ સરનામું, ફોન નંબર અથવા બંને પ્રદાન કરવાની સુગમતા છે-" 
+"તમારા માટે જે શ્રેષ્ઠ કામ કરે તે પસંદ કરો\n"
+"          "
 
 #: .\app\templates\login.html:7 .\app\templates\translationdata.txt:29
 #: .\app\templates\translationdata.txt:36
@@ -285,6 +440,10 @@ msgstr "મને યાદ:"
 msgid "Sign in:"
 msgstr "સાઇન ઇન કરો:"
 
+#: .\app\templates\past_event.html:31 .\app\templates\senior.html:35
+msgid "View More"
+msgstr "વધુ જોવો"
+
 #: .\app\templates\sports.html:8
 msgid "Sports Overview"
 msgstr "રમતગમતની ઝાંખી"
@@ -310,3 +469,11 @@ msgstr ""
 #: .\app\templates\translationdata.txt:8
 msgid "User Login"
 msgstr "વપરાશકર્તા લૉગિન"
+
+#: .\app\templates\video_list.html:30
+msgid "Part "
+msgstr "ભાગ"
+
+#: .\app\templates\video_player.html:48
+msgid "Watch Part"
+msgstr "ભાગ જુઓ"

@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-
-{% block title %}Timeline{% endblock %}
+{% load i18n %}
+{% block title %}{% trans 'Timeline' %}{% endblock %}
 
 {% block content %}
 {% load static %}
 <div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-bold text-body-emphasis">સમયરેખા</h1>
+    <h1 class="display-5 fw-bold text-body-emphasis">{% trans 'Timeline' %}</h1>
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">
             Embark on a visual journey through time with our captivating timeline. Spanning pivotal moments and

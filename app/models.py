@@ -9,6 +9,7 @@ class Founder(models.Model):
     def __str__(self):
         return self.name
 class MainCategory(models.Model):
+    description = models.TextField(null=True, blank=True)
     name = models.CharField(max_length=100)
 
     def __str__(self):
@@ -20,6 +21,7 @@ class Tag(models.Model):
         return self.name
 class SubCategory(models.Model):
     name = models.CharField(max_length=100)
+    description = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to='subcategory_images/',blank=True, null=True)
     parent_category = models.ForeignKey(MainCategory, on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tag, blank=True) 
@@ -29,6 +31,7 @@ class SubCategory(models.Model):
     
 class ChildCategory(models.Model):
     name = models.CharField(max_length=100)
+    description = models.TextField(null=True, blank=True)
     parent_category = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tag, blank=True) 
 
@@ -93,7 +96,7 @@ class VideoPart(models.Model):
 class PDFBook(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     cover = models.ImageField(upload_to='covers/', null=True, blank=True)
     pdf_file = models.FileField(upload_to='pdfs/')
 
