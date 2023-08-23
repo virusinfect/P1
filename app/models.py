@@ -79,6 +79,7 @@ class VideoPart(models.Model):
     video = models.ForeignKey(Video, on_delete=models.CASCADE, related_name='parts')
     part_number = models.PositiveIntegerField()
     title = models.CharField(max_length=200, null=True, blank=True)
+    cover = models.ImageField(upload_to='covers/', null=True, blank=True)
     video_file = models.FileField(upload_to='video_parts/')
     # Other fields you might want to include for each part
 

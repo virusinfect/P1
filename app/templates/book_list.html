@@ -27,11 +27,11 @@
                 <div class="card shadow-lg  rounded" style="background-color: rgba(255, 255, 255, 0.5);">
                     <img src="{{ book.cover.url }}" class="card-img-top" alt="{{ book.title }} Cover">
                     <div class="card-body">
-                        <div class="card-title text-secondary">TITLE :</div> 
+                        <div class="card-text fw-bold text-decoration-underline">TITLE :</div> 
                         <h5 class="card-text text-primary">{{ book.title }}</h5>
-                        <div class="card-text">AUTHOR</div> 
+                        <div class="card-text fw-bold text-decoration-underline">AUTHOR</div> 
                         <p class="card-text">{{ book.author }}</p>
-                        <P class="card-text">DESCRIPTION</P>
+                        <P class="card-text fw-bold text-decoration-underline">DESCRIPTION</P>
                         <p class="card-text">{{ book.description }}</p>
                         <a href="{% url 'pdf' pdf_id=book.pk %}" class="btn btn-primary">Read Now</a>
                     </div>

@@ -32,7 +32,7 @@
 
 <div class="container mt-5">
     <div class="row justify-content-center mt-3">
-        <div class="col-md-8" id="video-container">
+        <div class="col-md-8 shadow-lg" id="video-container">
 
                 <video id="video-player" controls autoplay muted>
                     <!-- Default video source -->
@@ -44,7 +44,7 @@
             <div class="row mt-3">
                 {% for part in parts %}
                     <div class="col-md-3 mb-3">
-                        <button class="part-button  btn btn-light" data-src="{{ part.video_file.url }}">
+                        <button class="part-button  btn btn-light shadow-lg" data-src="{{ part.video_file.url }}">
                             Watch Part {{ part.part_number }}
                         </button>
                     </div>

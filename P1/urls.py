@@ -33,6 +33,7 @@ urlpatterns = [
     path('video/', video_views.video_list, name='videolist'),
     path('add-comment/<int:photo_id>/', category_view.add_comment, name='add_comment'),
     path('events', category_view.event_category_view, name='events'),
+    path('project', category_view.project_category_view, name='project'),
     path('senior/<int:main_category_id>/', category_view.senior_category_detail, name='senior'),
     path('video-player/<int:video_id>/', video_views.video_player, name='video_player'),
     path('album/<int:child_category_id>/', category_view.child_category_images, name='album'),

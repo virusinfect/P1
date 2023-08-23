@@ -21,7 +21,7 @@
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       {% for part in video.parts.all|dictsort:"part_number" %}
       <div class="col" >
-        <div class="card shadow-sm " style="background-color: rgba(255, 255, 255, 0.5);">
+        <div class="card shadow-lg " style="background-color: rgba(255, 255, 255, 0.5);">
           <video controls preload="metadata">
             <source src="{{ part.video_file.url }}" type="video/mp4">
             Your browser does not support the video tag.

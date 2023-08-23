@@ -57,6 +57,13 @@
             color: light;
             
         }
+        .navbar-brand {
+        transition: transform 0.3s ease; /* Add a smooth transition effect */
+        }
+
+        .navbar-toggler[aria-expanded="false"] ~ .d-lg-flex .navbar-brand {
+        transform: translateX(-50%); /* Move the brand image to the center */
+        }
     </style>
 
 </head>
@@ -112,15 +119,15 @@
     <nav class="navbar navbar-expand-lg rounded mt-3 " aria-label="Thirteenth navbar example">
         <div class="container-fluid justify-content-lg-center">
             
-            <img class="navbar-brand  " src="{% static 'logo.png' %}" width="90px" height="90px" />
-    
+            
+            
             <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11"
                 aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-    
+            
             <div class="collapse navbar-collapse d-lg-flex justify-content-center align-items-center w-100" id="navbarsExample11">
-    
+                <img class="navbar-brand  " src="{% static 'logo.png' %}" width="90px" height="90px" />
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{% url 'index' %}">{% trans 'Home'%}</a>
@@ -164,7 +171,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-light" aria-current="page" href="#">{% trans 'Projects'%}</a>
+                            <a class="nav-link active text-light" aria-current="page" href="{% url 'project' %}">{% trans 'Projects'%}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active text-light" aria-current="page" href="{% url 'senior' main_category_id=3 %}">{% trans 'Senior citizens'%}</a>
@@ -192,8 +199,8 @@
                         </li>
                 </ul>
     
-                <ul id="lang" class="navbar-nav">
-                    <li class="nav-item dropdown justify-content-lg-end">
+                <ul id="lang" class="navbar-nav justify-content-lg-end">
+                    <li class="nav-item dropdown ">
                         <button class="btn btn-outline-light dropdown-toggle" type="button" id="languageDropdown"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             {{ lang_name }}{% trans 'Lang' %}
@@ -212,7 +219,7 @@
     </nav>
     
 
-    <div class="mt-1">
+    <div class="mt-1 container-fluid">
         {% block content %}{% endblock %}
     </div>
 
@@ -220,38 +227,33 @@
         <div class="container">
             <div class="row">
                 <div class="col-6 col-md-3 mb-3">
-                    <h5>Section 1</h5>
+                    <h5>Club</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Photos</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Founders</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Past Chairmans</a></li>
                     </ul>
                 </div>
     
                 <div class="col-6 col-md-3 mb-3 ">
-                    <h5>Section 2</h5>
+                    <h5>Sports</h5>
                     <ul class="nav flex-column ">
-                        <li class="nav-item mb-2 "><a href="#" class="nav-link p-0 text-light">About</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Events</a></li>
+                        <li class="nav-item mb-2 "><a href="#" class="nav-link p-0 text-light">Overview</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Veterans</a></li>
                     </ul>
                 </div>
     
                 <div class="col-6 col-md-3 mb-3">
-                    <h5>Section 3</h5>
+                    <h5>Media</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Contact</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Gallery</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Videos</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Books</a></li>
                     </ul>
                 </div>
-    
+                
                 <div class="col-md-3 mb-3">
-                    <form>
-                        <h5>{% trans 'Subscribe to our newsletter' %}</h5>
-                        <p>{% trans 'To ge notified about  new and exciting information from us.' %}</p>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Email address" aria-label="Email address" aria-describedby="subscribe-btn">
-                            <button class="btn btn-primary" type="button" id="subscribe-btn">{% trans 'Subscribe' %}</button>
-                        </div>
-                    </form>
+                    <img class="navbar-brand  " src="{% static 'logo.png' %}" width="110px" height="110px" />
+                    <img class="navbar-brand  " src="{% static 'social.png' %}" width="40px" height="40px" /></a>                 
+                    
                 </div>
             </div>
         </div>

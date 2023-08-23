@@ -61,3 +61,16 @@ def senior_category_detail(request, main_category_id):
     }
 
     return render(request, 'senior.html', context)
+
+def project_category_view(request):
+    main_category_id = 4  # Replace with the actual main category ID you want to display
+    main_category = MainCategory.objects.get(pk=main_category_id)
+    child_categories = ChildCategory.objects.filter(parent_category__parent_category=main_category)
+
+    context = {
+        'main_category': main_category,
+        'child_categories': child_categories,
+    }
+    return render(request, 'past_event.html', context)
+
+
