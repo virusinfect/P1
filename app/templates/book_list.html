@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - My Django App{% endblock %}
+
+{% block content %}
+<style>
+    .card-img-top {
+        height: 400px; /* Set a fixed height for the card images */
+        object-fit: fill; /* Maintain aspect ratio and cover the entire space */
+    }
+</style>
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold text-light">BOOKS</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4 text-light">
+            Embrace a vibrant sports community that celebrates victory and fosters friendship. Various teams, thrilling
+            matches, and exciting events elucidate our journey. Capture our journey's essence by exploring our photo
+            gallery.
+            Share the spirit of fun, create lasting memories, and connect with us for enduring experiences.</p>
+    </div>
+</div>
+<div class="container mt-5">
+    
+    <div class="row">
+        {% for book in books %}
+            <div class="col-lg-3 col-md-6 mb-4 py-3" >
+                <div class="card shadow-lg  rounded" style="background-color: rgba(255, 255, 255, 0.5);">
+                    <img src="{{ book.cover.url }}" class="card-img-top" alt="{{ book.title }} Cover">
+                    <div class="card-body">
+                        <div class="card-title text-secondary">TITLE :</div> 
+                        <h5 class="card-text text-primary">{{ book.title }}</h5>
+                        <div class="card-text">AUTHOR</div> 
+                        <p class="card-text">{{ book.author }}</p>
+                        <P class="card-text">DESCRIPTION</P>
+                        <p class="card-text">{{ book.description }}</p>
+                        <a href="{% url 'pdf' pdf_id=book.pk %}" class="btn btn-primary">Read Now</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

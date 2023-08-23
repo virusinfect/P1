@@ -5,13 +5,13 @@ admin.site.site_title = "JSC"
 admin.site.site_header = "JSC"
 admin.site.index_title = "Adminstration"
 
-from .models import Founder, MainCategory, SubCategory, Photo, Comment, Tag, ChildCategory, Chairman, Video, VideoPart
+from .models import Founder, MainCategory, SubCategory, Photo, Comment, Tag, ChildCategory, Chairman, Video, VideoPart,PDFBook
 
 admin.site.register(Founder)
 admin.site.register(MainCategory)
 admin.site.register(SubCategory)
 admin.site.register(Tag)
-
+admin.site.register(PDFBook)
 admin.site.register(Chairman)
 admin.site.register(Video)
 admin.site.register(VideoPart)

@@ -87,4 +87,15 @@ class VideoPart(models.Model):
 
     def __str__(self):
         return f"{self.video.title} - Part {self.part_number}: {self.title}"
+    
+
+class PDFBook(models.Model):
+    title = models.CharField(max_length=200)
+    author = models.CharField(max_length=200)
+    description = models.TextField()
+    cover = models.ImageField(upload_to='covers/', null=True, blank=True)
+    pdf_file = models.FileField(upload_to='pdfs/')
+
+    def __str__(self):
+        return self.title
 

@@ -4,18 +4,27 @@ from django.contrib import messages
 from django.conf import settings
 from django.views import View
 from django.utils.translation import activate
-from .models import Video
-from django.http import HttpResponse
+from .models import Video, PDFBook
+from django.http import HttpResponse, FileResponse
+import os
+from django.contrib.staticfiles import finders
 
 def timeline(request):
     return render(request, 'timeline.html')
 def test(request):
     return render(request, 'test.html')
-def pdf(request):
-    with open('static/nature.pdf', 'rb') as pdf:
-        response = HttpResponse(pdf.read(), content_type='application/pdf')
-        response['Content-Disposition'] = 'inline;filename=mypdf.pdf'
-    return render(request, 'pdf_viewer.html')
+def pdf(request, pdf_id):    
+    try:
+        pdf_book = PDFBook.objects.get(pk=pdf_id)
+        pdf_path = os.path.join(settings.MEDIA_ROOT, pdf_book.pdf_file.name)
+        print(pdf_path)
+        return FileResponse(open(pdf_path, 'rb'), content_type='application/pdf')
+    except PDFBook.DoesNotExist:
+        return render(request, 'pdf_not_found.html')
+    
+def book_list(request):
+    books = PDFBook.objects.all()
+    return render(request, 'book_list.html', {'books': books})
 def members(request):
     return render(request, 'members.html')
 def founders(request):
