@@ -32,7 +32,7 @@ PhotoFormSet = inlineformset_factory(ChildCategory, Photo, fields=('title', 'ima
 class PhotoInline(admin.TabularInline):  # Use TabularInline or StackedInline
     model = Photo
     formset = PhotoFormSet
-    extra = 5  # Number of empty photo upload fields to display
+    extra = 10  # Number of empty photo upload fields to display
 
 @admin.register(ChildCategory)
 class ChildCategoryAdmin(admin.ModelAdmin):

@@ -83,7 +83,7 @@ class VideoPart(models.Model):
     part_number = models.PositiveIntegerField()
     title = models.CharField(max_length=200, null=True, blank=True)
     cover = models.ImageField(upload_to='covers/', null=True, blank=True)
-    video_file = models.FileField(upload_to='video_parts/')
+    video_file = models.FileField(upload_to='video_parts/')    
     # Other fields you might want to include for each part
 
     class Meta:

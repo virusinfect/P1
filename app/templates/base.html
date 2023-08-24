@@ -33,101 +33,24 @@
                 'opsz' 48,
         }
 
-        .ball-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw; /* Use viewport width */
-            height: 100vh; /* Use viewport height */
-            pointer-events: none;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .confetti {
-            position: absolute;
-            border-radius: 20%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-
-        .navbar {
-            background-color: primary;
-            color: light;
-            
-        }
-        .navbar-brand {
-        transition: transform 0.3s ease; /* Add a smooth transition effect */
-        }
-
-        .navbar-toggler[aria-expanded="false"] ~ .d-lg-flex .navbar-brand {
-        transform: translateX(-50%); /* Move the brand image to the center */
-        }
+        
     </style>
 
 </head>
 
 <body>
-    <div class="ball-container">
-        <!-- Ball Animation -->
-        <script>
-            // Some random colors for confetti
-            const colors = ["#DAA520", "#FF8C00", "#FFD700", "#FFDD43", "#DAA520"];
-        
-            const numConfetti = 300;
-            const confetti = [];
-        
-            for (let i = 0; i < numConfetti; i++) {
-                let confetto = document.createElement("div");
-                confetto.classList.add("confetti");
-                confetto.style.background = colors[Math.floor(Math.random() * colors.length)];
-                confetto.style.left = `${Math.floor(Math.random() * 100)}vw`;
-                confetto.style.top = `${Math.floor(Math.random() * 100)}vh`;
-                confetto.style.transform = `rotate(${Math.random() * 360}deg)`; // Random rotation
-                confetto.style.width = `${Math.random()}em`;
-                confetto.style.height = `${Math.random()}em`;
-        
-                confetti.push(confetto);
-                document.body.append(confetto);
-            }
-        
-            // Keyframes for confetti animation
-            confetti.forEach((el, i, ra) => {
-                let to = {
-                    x: Math.random() * (i % 2 === 0 ? -11 : 11),
-                    y: Math.random() * 12
-                };
-        
-                let anim = el.animate(
-                    [
-                        { transform: "translate(0, 0)" },
-                        { transform: `translate(${to.x}rem, ${to.y}rem)` }
-                    ],
-                    {
-                        duration: (Math.random() + 1) * 2000,
-                        direction: "alternate",
-                        fill: "both",
-                        iterations: Infinity,
-                        easing: "ease-in-out"
-                    }
-                );
-            });
-        </script>
-    </div>
+
+    
     <!-- Static Navigation Bar -->
     <nav class="navbar navbar-expand-lg rounded mt-3 " aria-label="Thirteenth navbar example">
         <div class="container-fluid justify-content-lg-center">
             
             
             
-            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11"
-                aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            
             
             <div class="collapse navbar-collapse d-lg-flex justify-content-center align-items-center w-100" id="navbarsExample11">
-                <img class="navbar-brand  " src="{% static 'logo.png' %}" width="90px" height="90px" />
+                
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{% url 'index' %}">{% trans 'Home'%}</a>
@@ -217,7 +140,16 @@
             </div>
         </div>
     </nav>
-    
+    <nav class="navbar navbar-expand-lg rounded mt-3 " aria-label="Thirteenth navbar example">
+        <div class="container-fluid justify-content-lg-center">
+            <img class="navbar-brand  " src="{% static 'logo.png' %}" width="130px" height="130px" />
+            <h1 class="text-light d-none d-lg-block">Jaffery Sports Club</h1>
+            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11"
+                aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
 
     <div class="mt-1 container-fluid">
         {% block content %}{% endblock %}

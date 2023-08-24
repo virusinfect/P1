@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% block title %}About Us - My Django App{% endblock %}
+{% block title %}{% trans 'Videos' %}{% endblock %}
 
 {% block content %}
 {% load static %}
@@ -22,16 +22,14 @@
       {% for part in video.parts.all|dictsort:"part_number" %}
       <div class="col" >
         <div class="card shadow-lg " style="background-color: rgba(255, 255, 255, 0.5);">
-          <video controls preload="metadata">
-            <source src="{{ part.video_file.url }}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+            <a href="{% url 'video_player' video.id %}">
+              <img src="{{ part.cover.url }}"  class="img-fluid">
+            </a>
           <div class="card-body">
             <p class="card-text">{% trans 'Part ' %}{{ part.part_number }}: {{ video.title }}</p>
             <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group text-center">
-                
-                <a href="{% url 'video_player' video.id %}" class="btn btn-outline-primary ">{% trans 'Watch Now' %}</a>
+              <div class="btn-group text-center">                
+                <a href="{% url 'video_player' video.id %}" class="btn btn-primary ">{% trans 'Watch Now' %}</a>
               </div>
               
             </div>

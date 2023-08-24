@@ -4,12 +4,97 @@
 
 {% block content %}
 {% load static %}
+<style>
+        .ball-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw; /* Use viewport width */
+            height: 100vh; /* Use viewport height */
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .confetti {
+            position: absolute;
+            border-radius: 20%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+
+        .navbar {
+            background-color: primary;
+            color: light;
+            
+        }
+        .navbar-brand {
+        transition: transform 0.3s ease; /* Add a smooth transition effect */
+        }
+
+        .navbar-toggler[aria-expanded="false"] ~ .d-lg-flex .navbar-brand {
+        transform: translateX(-50%); /* Move the brand image to the center */
+        }
+
+</style>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.js"></script>
+<script>
+
+
+</script>
+<div class="ball-container">
+  <!-- Ball Animation -->
+  <script>
+      // Some random colors for confetti
+      const colors = ["#DAA520", "#FF8C00", "#FFD700", "#FFDD43", "#DAA520"];
+  
+      const numConfetti = 300;
+      const confetti = [];
+  
+      for (let i = 0; i < numConfetti; i++) {
+          let confetto = document.createElement("div");
+          confetto.classList.add("confetti");
+          confetto.style.background = colors[Math.floor(Math.random() * colors.length)];
+          confetto.style.left = `${Math.floor(Math.random() * 100)}vw`;
+          confetto.style.top = `${Math.floor(Math.random() * 100)}vh`;
+          confetto.style.transform = `rotate(${Math.random() * 360}deg)`; // Random rotation
+          confetto.style.width = `${Math.random()}em`;
+          confetto.style.height = `${Math.random()}em`;
+  
+          confetti.push(confetto);
+          document.body.append(confetto);
+      }
+  
+      // Keyframes for confetti animation
+      confetti.forEach((el, i, ra) => {
+          let to = {
+              x: Math.random() * (i % 2 === 0 ? -11 : 11),
+              y: Math.random() * 12
+          };
+  
+          let anim = el.animate(
+              [
+                  { transform: "translate(0, 0)" },
+                  { transform: `translate(${to.x}rem, ${to.y}rem)` }
+              ],
+              {
+                  duration: (Math.random() + 1) * 2000,
+                  direction: "alternate",
+                  fill: "both",
+                  iterations: Infinity,
+                  easing: "ease-in-out"
+              }
+          );
+      });
+  </script>
+</div>
 <div class="container py-4">
     <div class="px-4 py-5 my-5 text-center">
         <img class="d-block mx-auto mb-4" src="{% static 'media/logo.png' %}" alt="" width="350" height="350">
-        <h1 class="fw-bold mb-4 text-body-secondary">{% trans '100 years' %}</h1>
+        <h1 class="fw-bold mb-4 text-light">{% trans '100 years' %}</h1>
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4 text-white">{% blocktrans %}Embracing Excellence and Unity in a Century of Celebration! Join us to
                 commemorate our community's 100-year journey, from humble beginnings to remarkable achievements. Let's
@@ -67,7 +152,7 @@
                         </p>
                         <div class="mt-5 mb-4">
                           <img src="{% static 'user.png' %}"
-                            class="rounded-circle img-fluid shadow-1-strong" alt="smaple image" width="100"
+                            class="rounded-circle img-fluid shadow-4-strong" alt="smaple image" width="100"
                             height="100" />
                         </div>
                         <p class=" mb-0 text-light">- Chairman 1</p>
@@ -82,7 +167,7 @@
                         </p>
                         <div class="mt-5 mb-4">
                           <img src="{% static 'user.png' %}"
-                            class="rounded-circle img-fluid shadow-1-strong" alt="smaple image" width="100"
+                            class="rounded-circle img-fluid shadow-4-strong" alt="smaple image" width="100"
                             height="100" />
                         </div>
                         <p class=" mb-0 text-light">- Chairman 2</p>
