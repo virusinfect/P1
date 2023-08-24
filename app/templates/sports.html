@@ -5,7 +5,7 @@
 {% block content %}
 {% load static %}
 <div class="px-4 py-5 my-5 text-center">
-  <h1 class="display-5 fw-bold text-light">{% trans 'Sports Overview' %} </h1>
+  <h1 class="display-5 fw-bold text-light ">{% trans 'Sports Overview' %} </h1>
   <div class="col-lg-6 mx-auto">
     <p class="lead mb-4 text-light">{% blocktrans %}
       Embrace a vibrant sports community that celebrates victory and fosters friendship. Various teams, thrilling
@@ -29,7 +29,7 @@
             <ul class="list-group list-group-numbered">
               {% for child_category in subcategory.childcategory_set.all %}
               <a href="{% url 'album' child_category_id=child_category.id %}" class=" link-light link-offset-2 link-underline link-underline-opacity-0">
-                <li>{{ child_category.name }} <span class="badge bg-accent rounded-pill">{{child_category.photo_set.count }}</span></li>
+                <li>{{ child_category.name }} <span class="badge bg-primary rounded-pill">{{child_category.photo_set.count }}</span></li>
               </a>
 
 

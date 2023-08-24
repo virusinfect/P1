@@ -48,48 +48,48 @@
 <div class="ball-container">
   <!-- Ball Animation -->
   <script>
-      // Some random colors for confetti
-      const colors = ["#DAA520", "#FF8C00", "#FFD700", "#FFDD43", "#DAA520"];
-  
-      const numConfetti = 300;
-      const confetti = [];
-  
-      for (let i = 0; i < numConfetti; i++) {
-          let confetto = document.createElement("div");
-          confetto.classList.add("confetti");
-          confetto.style.background = colors[Math.floor(Math.random() * colors.length)];
-          confetto.style.left = `${Math.floor(Math.random() * 100)}vw`;
-          confetto.style.top = `${Math.floor(Math.random() * 100)}vh`;
-          confetto.style.transform = `rotate(${Math.random() * 360}deg)`; // Random rotation
-          confetto.style.width = `${Math.random()}em`;
-          confetto.style.height = `${Math.random()}em`;
-  
-          confetti.push(confetto);
-          document.body.append(confetto);
-      }
-  
-      // Keyframes for confetti animation
-      confetti.forEach((el, i, ra) => {
-          let to = {
-              x: Math.random() * (i % 2 === 0 ? -11 : 11),
-              y: Math.random() * 12
-          };
-  
-          let anim = el.animate(
-              [
-                  { transform: "translate(0, 0)" },
-                  { transform: `translate(${to.x}rem, ${to.y}rem)` }
-              ],
-              {
-                  duration: (Math.random() + 1) * 2000,
-                  direction: "alternate",
-                  fill: "both",
-                  iterations: Infinity,
-                  easing: "ease-in-out"
-              }
-          );
-      });
-  </script>
+    // Some golden colors for confetti
+    const colors = ["#FFD700", "#FFD700", "#FFD700", "#FFD700", "#FFD700"];
+
+    const numConfetti = 300;
+    const confetti = [];
+
+    for (let i = 0; i < numConfetti; i++) {
+        let confetto = document.createElement("div");
+        confetto.classList.add("confetti");
+        confetto.style.background = colors[Math.floor(Math.random() * colors.length)];
+        confetto.style.left = `${Math.floor(Math.random() * 100)}vw`;
+        confetto.style.top = `${Math.floor(Math.random() * 100)}vh`;
+        confetto.style.transform = `rotate(${Math.random() * 360}deg)`; // Random rotation
+        confetto.style.width = `${Math.random()}em`;
+        confetto.style.height = `${Math.random()}em`;
+
+        confetti.push(confetto);
+        document.body.append(confetto);
+    }
+
+    // Keyframes for confetti animation
+    confetti.forEach((el, i, ra) => {
+        let to = {
+            x: Math.random() * (i % 2 === 0 ? -11 : 11),
+            y: Math.random() * 12
+        };
+
+        let anim = el.animate(
+            [
+                { transform: "translate(0, 0)" },
+                { transform: `translate(${to.x}rem, ${to.y}rem)` }
+            ],
+            {
+                duration: (Math.random() + 1) * 2000,
+                direction: "alternate",
+                fill: "both",
+                iterations: Infinity,
+                easing: "cubic-bezier(0.6, 0.98, 0.48, 3.08)"
+            }
+        );
+    });
+</script>
 </div>
 <div class="container py-4">
     <div class="px-4 py-5 my-5 text-center">

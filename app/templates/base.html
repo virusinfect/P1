@@ -1,9 +1,11 @@
 {% load i18n %}
+{% load static %}
 <html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
     <title>{% block title %}Jaffery Sports Club{% endblock %}</title>
     {% load static %}
     <link href="{% static 'css/custom.css' %}" rel="stylesheet">
@@ -161,24 +163,24 @@
                 <div class="col-6 col-md-3 mb-3">
                     <h5>{% trans 'Club' %}</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">{% trans 'Founders' %}</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">{% trans 'Past Chairmans' %}</a></li>
+                        <li class="nav-item mb-2"><a href="{% url 'founders' %}" class="nav-link p-0 text-light">{% trans 'Founders' %}</a></li>
+                        <li class="nav-item mb-2"><a href="{% url 'chairmans' %}" class="nav-link p-0 text-light">{% trans 'Past Chairmans' %}</a></li>
                     </ul>
                 </div>
     
                 <div class="col-6 col-md-3 mb-3 ">
                     <h5>{% trans 'Sports' %}</h5>
                     <ul class="nav flex-column ">
-                        <li class="nav-item mb-2 "><a href="#" class="nav-link p-0 text-light">{% trans 'Overview' %}</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">{% trans 'Veterans' %}</a></li>
+                        <li class="nav-item mb-2 "><a href="{% url 'sports' main_category_id=1 %}" class="nav-link p-0 text-light">{% trans 'Overview' %}</a></li>
+                        <li class="nav-item mb-2"><a href="{% url 'album' child_category_id=2 %}" class="nav-link p-0 text-light">{% trans 'Veterans' %}</a></li>
                     </ul>
                 </div>
     
                 <div class="col-6 col-md-3 mb-3">
                     <h5>{% trans 'Media' %}</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">{% trans 'Videos' %}</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">{% trans 'Books' %}</a></li>
+                        <li class="nav-item mb-2"><a href="{% url 'videolist' %}" class="nav-link p-0 text-light">{% trans 'Videos' %}</a></li>
+                        <li class="nav-item mb-2"><a href="{% url 'book_list' %}" class="nav-link p-0 text-light">{% trans 'Books' %}</a></li>
                     </ul>
                 </div>
                 
